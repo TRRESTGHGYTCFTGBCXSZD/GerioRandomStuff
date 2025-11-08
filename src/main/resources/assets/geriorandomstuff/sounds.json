@@ -1,0 +1,19 @@
+{
+  "breakhere": {
+    "subtitle": "subtitles.breakhere",
+    "sounds": [
+      {
+        "name": "geriorandomstuff:fnf_loss_sfx",
+        "stream": false
+      }
+    ]
+  },
+  "sambadejaneiro": {
+    "sounds": [
+      {
+        "name": "geriorandomstuff:samba_de_janeiro",
+        "stream": true
+      }
+    ]
+  }
+}

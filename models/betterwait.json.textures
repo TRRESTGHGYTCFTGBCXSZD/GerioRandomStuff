@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "new_supertool"
+      },
+      "name": "default"
+    },
+    "dead": {
+      "map": {
+        "0": "new_supertool_dead"
+      },
+      "name": "dead"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_fv": 47,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "texture": "new_supertool_dead",
+    "customModelName": "betterwait:dead",
+    "name": "SuperTool ��c(Broken)",
+    "specialInfo": [
+      "Deprecated",
+      "Use It For Useful Tools!"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:Tabness"
+    },
+    "harvestLevel": 0,
+    "efficiency": 1.0,
+    "attackSpeed": 1.0,
+    "enchantability": 255,
+    "damageVsEntity": 0.0,
+    "usageCount": 3,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "ReplaceGussun"
+    },
+    "onRightClickedOnBlock": {
+      "name": "ReplaceGussun"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_fv": 47,
+  "_type": "tool",
+  "definition": {
+    "toolType": "MultiTool",
+    "renderType": 1,
+    "texture": "new_supertool",
+    "customModelName": "betterwait:default",
+    "name": "SuperTool",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Tabness"
+    },
+    "harvestLevel": 255,
+    "efficiency": 255.0,
+    "attackSpeed": 100.0,
+    "enchantability": 255,
+    "damageVsEntity": 128000.0,
+    "usageCount": 14000,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedOnBlock": {
+      "name": "SuperToolCheckThingy"
+    },
+    "onEntityHitWith": {
+      "name": "WorstPickaxeDestroyCheck"
+    }
+  }
+}

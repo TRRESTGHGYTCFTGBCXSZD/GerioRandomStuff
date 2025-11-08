@@ -1,0 +1,48 @@
+{
+  "_fv": 47,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "packduplicator",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      },
+      {
+        "value": "TAG:forge:ingots/duplicator"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CongealedDuplicator"
+    },
+    "name": "duplicator_pack",
+    "namespace": "mod"
+  }
+}

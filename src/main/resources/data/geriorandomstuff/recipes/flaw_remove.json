@@ -1,0 +1,23 @@
+{
+    "type": "create:mixing",
+	"ingredients": [
+		{
+			"item": "ae2:flawed_budding_quartz"
+		},
+		{
+			"item": "geriorandomstuff:congealed_duplicator_div_9"
+		},
+		{
+			"item": "geriorandomstuff:congealed_duplicator_div_9"
+		},
+		{
+			"item": "geriorandomstuff:congealed_duplicator_div_9"
+		}
+	],
+	"results": [
+		{
+			"item": "ae2:flawless_budding_quartz",
+			"count": 1
+		}
+	]
+}

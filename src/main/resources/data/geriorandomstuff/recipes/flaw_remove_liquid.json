@@ -1,0 +1,19 @@
+{
+    "type": "create:mixing",
+	"ingredients": [
+		{
+			"item": "ae2:flawed_budding_quartz"
+		},
+		{
+			"fluid": "geriorandomstuff:duplicator",
+			"nbt": {},
+			"amount": 270
+		}
+	],
+	"results": [
+		{
+			"item": "ae2:flawless_budding_quartz",
+			"count": 1
+		}
+	]
+}

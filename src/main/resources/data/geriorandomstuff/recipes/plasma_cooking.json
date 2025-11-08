@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:melting_fuel",
+  "fluid": {
+    "fluid": "geriorandomstuff:plasma",
+    "amount": 10
+  },
+  "duration": 1000,
+  "temperature": 19721121,
+  "rate": 1000000
+}

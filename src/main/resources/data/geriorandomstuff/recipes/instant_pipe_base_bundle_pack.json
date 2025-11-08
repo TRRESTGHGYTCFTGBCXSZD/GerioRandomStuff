@@ -1,0 +1,179 @@
+{
+    "type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		},
+		{
+			"item": "geriorandomstuff:instant_pipe_base"
+		}
+	],
+	"results": [
+		{
+			"item": "geriorandomstuff:instant_pipe_base_bundle",
+			"count": 1
+		}
+	]
+}

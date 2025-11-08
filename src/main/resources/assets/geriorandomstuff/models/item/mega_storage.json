@@ -1,0 +1,24 @@
+{
+	"parent": "item/geriosbmintyredstone_redstone",
+	"textures": {
+		"0": "geriorandomstuff:block/gerio_front",
+		"1": "geriorandomstuff:block/gerio_bottom",
+		"2": "geriorandomstuff:block/gerio_side",
+		"3": "geriorandomstuff:block/gerio_top",
+		"particle": "geriorandomstuff:block/geriogerio"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#0", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#2", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#2", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#2", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#3", "cullface": "down"}
+			}
+		}
+	]
+}

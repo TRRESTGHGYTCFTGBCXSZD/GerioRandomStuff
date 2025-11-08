@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "packduplicator",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    },
+    {
+      "tag": "forge:ingots/duplicator"
+    }
+  ],
+  "result": {
+    "item": "geriorandomstuff:congealed_duplicator",
+    "count": 1
+  }
+}

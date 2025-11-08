@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "geriorandomstuff:block/gussunhead"
+    },
+    "facing=east": {
+      "model": "geriorandomstuff:block/gussunhead",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "geriorandomstuff:block/gussunhead",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "geriorandomstuff:block/gussunhead",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"variants":{
+		"": [
+			{"model":"geriorandomstuff:block/congealed_duplicator"},
+			{"model":"geriorandomstuff:block/congealed_duplicator", "y": 90 },
+			{"model":"geriorandomstuff:block/congealed_duplicator", "y": 180 },
+			{"model":"geriorandomstuff:block/congealed_duplicator", "y": 270 }
+		]
+	}
+}

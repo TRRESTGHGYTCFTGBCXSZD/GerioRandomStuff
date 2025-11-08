@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "1": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "2": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "3": {
+      "tag": "forge:gems/diamond"
+    },
+    "4": {
+      "item": "minecraft:hopper"
+    },
+    "5": {
+      "item": "minecraft:ender_pearl"
+    },
+    "6": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "7": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "8": {
+      "tag": "forge:storage_blocks/steel"
+    }
+  },
+  "result": {
+    "item": "geriorandomstuff:instant_item_pipe",
+    "count": 14
+  }
+}

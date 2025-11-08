@@ -1,0 +1,17 @@
+{
+  "_fv": 47,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:DebugSolo"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "nyoom_vroom_ddr_solo",
+    "namespace": "popnblock1"
+  }
+}

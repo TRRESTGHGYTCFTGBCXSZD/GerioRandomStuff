@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "minecraft:dirt"
+  },
+  "fluid": {
+    "name": "tconstruct:molten_manyullyn",
+    "amount": 810
+  },
+  "result": "geriorandomstuff:congealed_duplicator",
+  "cooling_time": 100
+}

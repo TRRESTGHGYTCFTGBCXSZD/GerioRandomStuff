@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "geriorandomstuff:instant_pipe_base_bundle"
+    },
+    {
+      "item": "minecraft:hopper"
+    }
+  ],
+  "results": [
+    {
+      "item": "geriorandomstuff:instant_item_pipe",
+      "count": 56
+    }
+  ]
+}

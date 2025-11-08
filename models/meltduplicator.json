@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "wiwiwiwiwiwiwiwiwiwiwiwiwiwiwiwi:congealed_duplicator"
+  },
+  "result": {
+    "fluid": "wiwiwiwiwiwiwiwiwiwiwiwiwiwiwiwi:duplicator",
+    "amount": 1296
+  },
+  "temperature": 1500,
+  "time": 100
+}

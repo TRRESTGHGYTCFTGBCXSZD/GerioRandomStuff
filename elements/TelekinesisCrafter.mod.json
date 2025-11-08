@@ -1,0 +1,48 @@
+{
+  "_fv": 47,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "telekinesis",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Duplicator"
+      },
+      {
+        "value": "CUSTOM:Gussunhead"
+      },
+      {
+        "value": "CUSTOM:Duplicator"
+      },
+      {
+        "value": "CUSTOM:Gussunhead"
+      },
+      {
+        "value": "CUSTOM:Duplicator"
+      },
+      {
+        "value": "CUSTOM:Gussunhead"
+      },
+      {
+        "value": "CUSTOM:Duplicator"
+      },
+      {
+        "value": "CUSTOM:Gussunhead"
+      },
+      {
+        "value": "CUSTOM:Duplicator"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:TelekinesisSetter"
+    },
+    "name": "telekinesis_crafter",
+    "namespace": "mod"
+  }
+}

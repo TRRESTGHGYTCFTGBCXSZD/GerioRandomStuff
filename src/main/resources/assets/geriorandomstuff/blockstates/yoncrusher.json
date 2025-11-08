@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "geriorandomstuff:block/yoncrusher"
+    },
+    "facing=east": {
+      "model": "geriorandomstuff:block/yoncrusher",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "geriorandomstuff:block/yoncrusher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "geriorandomstuff:block/yoncrusher",
+      "y": 270
+    }
+  }
+}

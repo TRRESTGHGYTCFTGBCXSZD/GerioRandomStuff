@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "geriorandomstuff:superheated_duplicator"
+  },
+  "result": {
+    "fluid": "geriorandomstuff:plasma",
+    "amount": 4000
+  },
+  "temperature": 0,
+  "time": 60
+}

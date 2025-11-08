@@ -1,0 +1,13 @@
+{
+  "type": "tconstruct:casting_basin",
+  "cast": {
+    "item": "geriorandomstuff:congealed_duplicator"
+  },
+  "cast_consumed": true,
+  "fluid": {
+    "fluid": "tconstruct:blazing_blood",
+    "amount": 20000
+  },
+  "result": "geriorandomstuff:superheated_duplicator",
+  "cooling_time": 1
+}

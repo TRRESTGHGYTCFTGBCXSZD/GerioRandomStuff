@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pastefullness",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "1": {
+      "item": "geriorandomstuff:paste"
+    },
+    "2": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "3": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "4": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "5": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "6": {
+      "tag": "forge:storage_blocks/steel"
+    },
+    "7": {
+      "tag": "popnblock1:nyoom_vroom_ddr_solo"
+    },
+    "8": {
+      "tag": "forge:storage_blocks/steel"
+    }
+  },
+  "result": {
+    "item": "geriorandomstuff:worst_pickaxe",
+    "count": 1
+  }
+}
