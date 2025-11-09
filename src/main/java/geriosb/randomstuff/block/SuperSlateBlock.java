@@ -38,6 +38,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+import at.petrak.hexcasting.api.utils.NBTHelper;
 
 import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
 import geriosb.randomstuff.GerioItems;
@@ -131,7 +132,8 @@ public class SuperSlateBlock extends BlockCircleComponent implements EntityBlock
         if (be instanceof SuperSlateBlockEntity slate) {
             ItemStack stack = new ItemStack(GerioItems.SUPER_SLATE);
             if (slate.getIotaTag() != null) {
-                GerioItems.SUPER_SLATE.writeDatum(stack, slate.getIotaTag());
+                var beTag = NBTHelper.getOrCreateCompound(stack, "BlockEntityTag");
+                beTag.put(SuperSlateBlockEntity.TAG_IOTA, slate.getIotaTag());
             }
             return stack;
         }

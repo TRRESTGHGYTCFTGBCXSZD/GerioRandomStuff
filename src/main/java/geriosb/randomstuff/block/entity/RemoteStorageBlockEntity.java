@@ -14,7 +14,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 
-import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
+import geriosb.randomstuff.GerioBlocks;
 import geriosb.randomstuff.caps.IGPSableBlock;
 import geriosb.randomstuff.caps.GPSLocation;
 
@@ -28,7 +28,7 @@ public class RemoteStorageBlockEntity extends BlockEntity implements IGPSableBlo
     private volatile long UsedTick = 0;
 
     public RemoteStorageBlockEntity(BlockPos pos, BlockState state) {
-        super(GeriorandomstuffModBlockEntities.REMOTE_STORAGE.get(), pos, state);
+        super(GerioBlocks.REMOTE_STORAGE_ENTITY.get(), pos, state);
     }
 
     // -------------------

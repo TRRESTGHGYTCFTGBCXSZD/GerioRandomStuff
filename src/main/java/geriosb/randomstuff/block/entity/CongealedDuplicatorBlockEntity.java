@@ -22,7 +22,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import geriosb.randomstuff.world.inventory.DupeMenu;
-import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
+import geriosb.randomstuff.GerioBlocks;
 
 import javax.annotation.Nullable;
 
@@ -35,7 +35,7 @@ public class CongealedDuplicatorBlockEntity extends RandomizableContainerBlockEn
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public CongealedDuplicatorBlockEntity(BlockPos position, BlockState state) {
-		super(GeriorandomstuffModBlockEntities.CONGEALED_DUPLICATOR.get(), position, state);
+		super(GerioBlocks.CONGEALED_DUPLICATOR_ENTITY.get(), position, state);
 	}
 
 	@Override

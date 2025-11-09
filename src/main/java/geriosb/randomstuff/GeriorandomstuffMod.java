@@ -11,6 +11,9 @@
  *    will be REGENERATED on each build.
  *
  */
+
+// It's. Time. To. Break. Shackles. of. MCreator.
+
 package geriosb.randomstuff;
 
 import org.apache.logging.log4j.Logger;
@@ -28,16 +31,6 @@ import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
-
-import geriosb.randomstuff.init.GeriorandomstuffModTabs;
-import geriosb.randomstuff.init.GeriorandomstuffModSounds;
-import geriosb.randomstuff.init.GeriorandomstuffModMenus;
-import geriosb.randomstuff.GerioItems;
-import geriosb.randomstuff.GerioBlocks;
-import geriosb.randomstuff.init.GeriorandomstuffModFluids;
-import geriosb.randomstuff.init.GeriorandomstuffModFluidTypes;
-import geriosb.randomstuff.init.GeriorandomstuffModFeatures;
-import geriosb.randomstuff.init.GeriorandomstuffModEnchantments;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -59,21 +52,18 @@ public class GeriorandomstuffMod {
 	public GeriorandomstuffMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		GeriorandomstuffModSounds.REGISTRY.register(bus);
-		//GeriorandomstuffModBlocks.REGISTRY.register(bus);
-		//GeriorandomstuffModBlockEntities.REGISTRY.register(bus);
+		GerioSounds.REGISTRY.register(bus);
 		GerioBlocks.REGISTERBLOCK.register(bus); // blocks and block entities bundled in one
 		GerioBlocks.REGISTERTILEENTITY.register(bus); // blocks and block entities bundled in one
-		//GeriorandomstuffModItems.REGISTRY.register(bus);
 		GerioItems.REGISTRY.register(bus);
 
-		GeriorandomstuffModEnchantments.REGISTRY.register(bus);
-		GeriorandomstuffModTabs.REGISTRY.register(bus);
-		GeriorandomstuffModFeatures.REGISTRY.register(bus);
+		GerioEnchantments.REGISTRY.register(bus);
+		GerioGUIs.REGISTERMENU.register(bus);
+		//GeriorandomstuffModFeatures.REGISTRY.register(bus);
 
-		GeriorandomstuffModMenus.REGISTRY.register(bus);
-		GeriorandomstuffModFluids.REGISTRY.register(bus);
-		GeriorandomstuffModFluidTypes.REGISTRY.register(bus);
+		GerioGUIs.REGISTERTAB.register(bus);
+		GerioFluids.REGISTERFLUID.register(bus);
+		GerioFluids.REGISTERTYPE.register(bus);
 		
 		//GerioItems.REGISTRY.register(bus); // for ponder
 	}

@@ -19,7 +19,7 @@ import net.minecraft.core.BlockPos;
 import javax.annotation.Nullable;
 
 import geriosb.randomstuff.caps.MegaStorageItemHandler;
-import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
+import geriosb.randomstuff.GerioBlocks;
 import net.minecraft.core.Direction;
 
 

@@ -1,8 +1,9 @@
-package geriosb.randomstuff.integrations;
+package geriosb.randomstuff.item;
 
 import at.petrak.hexcasting.annotations.SoftImplement;
 import at.petrak.hexcasting.api.HexAPI;
 import at.petrak.hexcasting.api.casting.iota.Iota;
+import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.api.casting.iota.PatternIota;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.api.item.IotaHolderItem;
@@ -29,6 +30,8 @@ import java.util.Optional;
 
 import static at.petrak.hexcasting.api.HexAPI.modLoc;
 
+import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
+
 public class SuperSlateItem extends BlockItem implements IotaHolderItem {
     public static final ResourceLocation WRITTEN_PRED = modLoc("written");
 
@@ -38,43 +41,9 @@ public class SuperSlateItem extends BlockItem implements IotaHolderItem {
 
     @Override
     public Component getName(ItemStack pStack) {
-        var key = "block." + HexAPI.MOD_ID + ".slate." + (hasPattern(pStack) ? "written" : "blank");
-        Component patternText = getPattern(pStack)
-            .map(pat -> Component.literal(": ").append(new InlinePatternData(pat).asText(false)))
-            .orElse(Component.literal(""));
-        return Component.translatable(key).append(patternText);
-    }
-
-    public static Optional<HexPattern> getPattern(ItemStack stack){
-        var bet = NBTHelper.getCompound(stack, "BlockEntityTag");
-
-        if (bet != null && bet.contains(BlockEntitySlate.TAG_PATTERN, Tag.TAG_COMPOUND)) {
-            var patTag = bet.getCompound(BlockEntitySlate.TAG_PATTERN);
-            if (!patTag.isEmpty()) {
-                var pattern = HexPattern.fromNBT(patTag);
-                return Optional.of(pattern);
-            }
-        }
-        return Optional.empty();
-    }
-
-    public static boolean hasPattern(ItemStack stack) {
-        return getPattern(stack).isPresent();
-    }
-
-    @SoftImplement("IForgeItem")
-    public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
-        if (!hasPattern(stack)) {
-            NBTHelper.remove(stack, "BlockEntityTag");
-        }
-        return false;
-    }
-
-    @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if (!hasPattern(pStack)) {
-            NBTHelper.remove(pStack, "BlockEntityTag");
-        }
+        var beTag = NBTHelper.getOrCreateCompound(pStack, "BlockEntityTag");
+        var key = "block." + HexAPI.MOD_ID + ".slate." + (!beTag.isEmpty() ? "written" : "blank");
+        return Component.translatable(key);
     }
 
     @Override

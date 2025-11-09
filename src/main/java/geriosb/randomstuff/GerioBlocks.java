@@ -37,7 +37,11 @@ import geriosb.randomstuff.block.entity.LiquidDuplicatorBlockBlockEntity;
 import geriosb.randomstuff.block.entity.CongealedDuplicatorBlockEntity;
 import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
 
-import geriosb.randomstuff.GeriorandomstuffMod;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.block.*;
+
+import geriosb.randomstuff.*;
 
 import net.minecraftforge.fml.ModList;
 
@@ -59,7 +63,7 @@ public class GerioBlocks {
 	public static final RegistryObject<Block> INSTANT_GAS_PIPE = REGISTERBLOCK.register("instant_gas_pipe", () -> new InstantGasPipeBlock());
 	public static final RegistryObject<Block> MEGA_STORAGE = REGISTERBLOCK.register("mega_storage", () -> new MegaStorageBlock());
 	public static final RegistryObject<Block> GERIO_BLOCK = REGISTERBLOCK.register("gerio_block", () -> new GerioBlockBlock());
-	public static final RegistryObject<Block> SUPER_SLATE = REGISTERBLOCK.register("super_slate", () -> new SuperSlateBlock());
+	public static final RegistryObject<Block> SUPER_SLATE = REGISTERBLOCK.register("super_slate", () -> new SuperSlateBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES).strength(4f, 4f).pushReaction(PushReaction.DESTROY)));
 
 	public static final DeferredRegister<BlockEntityType<?>> REGISTERTILEENTITY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GeriorandomstuffMod.MODID);
 	public static final RegistryObject<BlockEntityType<?>> TELEKINESIS_SETTER_ENTITY = register("telekinesis_setter", TELEKINESIS_SETTER, TelekinesisSetterBlockEntity::new);

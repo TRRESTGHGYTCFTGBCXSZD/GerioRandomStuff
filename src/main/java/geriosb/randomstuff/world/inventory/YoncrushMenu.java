@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-import geriosb.randomstuff.init.GeriorandomstuffModMenus;
+import geriosb.randomstuff.GerioGUIs;
 
 public class YoncrushMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
@@ -39,7 +39,7 @@ public class YoncrushMenu extends AbstractContainerMenu implements Supplier<Map<
 	private BlockEntity boundBlockEntity = null;
 
 	public YoncrushMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(GeriorandomstuffModMenus.YONCRUSH.get(), id);
+		super(GerioGUIs.YONCRUSH.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(18);

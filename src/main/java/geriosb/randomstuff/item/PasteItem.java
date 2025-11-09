@@ -15,7 +15,7 @@ import net.minecraft.network.chat.Component;
 import java.util.List;
 
 import geriosb.randomstuff.procedures.PasteFoodEatenProcedure;
-import geriosb.randomstuff.init.GeriorandomstuffModItems;
+import geriosb.randomstuff.GerioItems;
 
 public class PasteItem extends Item {
 	public PasteItem() {
@@ -36,7 +36,7 @@ public class PasteItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
-		ItemStack retval = new ItemStack(GeriorandomstuffModItems.PASTE.get());
+		ItemStack retval = new ItemStack(GerioItems.PASTE.get());
 		super.finishUsingItem(itemstack, world, entity);
 		double x = entity.getX();
 		double y = entity.getY();
