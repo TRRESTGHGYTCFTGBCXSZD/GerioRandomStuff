@@ -22,7 +22,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 import geriosb.randomstuff.InfiniteLiquidTank;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -35,7 +35,7 @@ public class LiquidDuplicatorBlockBlockEntity extends RandomizableContainerBlock
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public LiquidDuplicatorBlockBlockEntity(BlockPos position, BlockState state) {
-		super(GerioBlocks.LIQUID_DUPLICATOR_BLOCK_ENTITY.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.LIQUID_DUPLICATOR_BLOCK.get(), position, state);
 	}
 
 @Override

@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-import geriosb.randomstuff.GerioGUIs;
+import geriosb.randomstuff.init.GeriorandomstuffModMenus;
 
 public class SilkerUpMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
@@ -39,7 +39,7 @@ public class SilkerUpMenu extends AbstractContainerMenu implements Supplier<Map<
 	private BlockEntity boundBlockEntity = null;
 
 	public SilkerUpMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(GerioGUIs.SILKER_UP.get(), id);
+		super(GeriorandomstuffModMenus.SILKER_UP.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(1);

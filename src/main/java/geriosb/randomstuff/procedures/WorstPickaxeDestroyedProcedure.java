@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 
 import javax.annotation.Nullable;
 
-import geriosb.randomstuff.GerioItems;
+import geriosb.randomstuff.init.GeriorandomstuffModItems;
 
 @Mod.EventBusSubscriber
 public class WorstPickaxeDestroyedProcedure {
@@ -27,9 +27,9 @@ public class WorstPickaxeDestroyedProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, ItemStack itemstack) {
-		if (itemstack.getItem() == GerioItems.WORST_PICKAXE.get() || itemstack.getItem() == GerioItems.WORST_PICKAXE_BROKEN.get()) {
+		if (itemstack.getItem() == GeriorandomstuffModItems.WORST_PICKAXE.get() || itemstack.getItem() == GeriorandomstuffModItems.WORST_PICKAXE_BROKEN.get()) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(GerioItems.SUPER_TOOL_HEAD.get()));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(GeriorandomstuffModItems.SUPER_TOOL_HEAD.get()));
 				entityToSpawn.setPickUpDelay(0);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);

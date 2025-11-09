@@ -8,12 +8,13 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.LiquidBlock;
 
-import geriosb.randomstuff.GerioFluids;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModFluids;
+import geriosb.randomstuff.init.GeriorandomstuffModFluidTypes;
+import geriosb.randomstuff.init.GeriorandomstuffModBlocks;
 
 public abstract class PlasmaFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> GerioFluids.PLASMA_TYPE.get(), () -> GerioFluids.PLASMA.get(),
-			() -> GerioFluids.FLOWING_PLASMA.get()).explosionResistance(100f).block(() -> (LiquidBlock) GerioBlocks.PLASMA.get());
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> GeriorandomstuffModFluidTypes.PLASMA_TYPE.get(), () -> GeriorandomstuffModFluids.PLASMA.get(),
+			() -> GeriorandomstuffModFluids.FLOWING_PLASMA.get()).explosionResistance(100f).block(() -> (LiquidBlock) GeriorandomstuffModBlocks.PLASMA.get());
 
 	private PlasmaFluid() {
 		super(PROPERTIES);

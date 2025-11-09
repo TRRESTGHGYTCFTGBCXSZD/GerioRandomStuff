@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 import geriosb.randomstuff.caps.MegaStorageItemHandler;
 import geriosb.randomstuff.integrations.IMegaStorageBlockEntity;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 import net.minecraft.core.Direction;
 
 public class MegaStorageBlockEntity extends net.minecraft.world.level.block.entity.BlockEntity implements IMegaStorageBlockEntity {
@@ -29,7 +29,7 @@ public class MegaStorageBlockEntity extends net.minecraft.world.level.block.enti
 	private final LazyOptional<IItemHandler> handlerOptional = LazyOptional.of(() -> handler);
 
 	public MegaStorageBlockEntity(BlockPos position, BlockState state) {
-		super(GerioBlocks.MEGA_STORAGE_ENTITY.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.MEGA_STORAGE.get(), position, state);
 	}
 
 	@Override

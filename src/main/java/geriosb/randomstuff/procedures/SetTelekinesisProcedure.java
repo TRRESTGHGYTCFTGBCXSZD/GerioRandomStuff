@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-import geriosb.randomstuff.GerioEnchantments;
+import geriosb.randomstuff.init.GeriorandomstuffModEnchantments;
 
 public class SetTelekinesisProcedure {
 	public static void execute(Entity entity, HashMap guistate) {
@@ -56,14 +56,14 @@ public class SetTelekinesisProcedure {
 			{
 				Map<Enchantment, Integer> _enchantments = EnchantmentHelper
 						.getEnchantments((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY));
-				if (_enchantments.containsKey(GerioEnchantments.WATER_FALL_DAMAGE.get())) {
-					_enchantments.remove(GerioEnchantments.WATER_FALL_DAMAGE.get());
+				if (_enchantments.containsKey(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get())) {
+					_enchantments.remove(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get());
 					EnchantmentHelper.setEnchantments(_enchantments,
 							(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY));
 				}
 			}
 			(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY)
-					.enchant(GerioEnchantments.WATER_FALL_DAMAGE.get(), (int) new Object() {
+					.enchant(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get(), (int) new Object() {
 						double convert(String s) {
 							try {
 								return Double.parseDouble(s.trim());
@@ -100,8 +100,8 @@ public class SetTelekinesisProcedure {
 			{
 				Map<Enchantment, Integer> _enchantments = EnchantmentHelper
 						.getEnchantments((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY));
-				if (_enchantments.containsKey(GerioEnchantments.WATER_FALL_DAMAGE.get())) {
-					_enchantments.remove(GerioEnchantments.WATER_FALL_DAMAGE.get());
+				if (_enchantments.containsKey(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get())) {
+					_enchantments.remove(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get());
 					EnchantmentHelper.setEnchantments(_enchantments,
 							(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY));
 				}

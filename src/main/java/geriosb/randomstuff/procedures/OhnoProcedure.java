@@ -14,7 +14,7 @@ import net.minecraft.commands.CommandSource;
 
 import javax.annotation.Nullable;
 
-import geriosb.randomstuff.GerioEnchantments;
+import geriosb.randomstuff.init.GeriorandomstuffModEnchantments;
 
 @Mod.EventBusSubscriber
 public class OhnoProcedure {
@@ -32,7 +32,7 @@ public class OhnoProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(GerioEnchantments.WATER_FALL_DAMAGE.get()) > 0 && entity.isShiftKeyDown()) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get()) > 0 && entity.isShiftKeyDown()) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
@@ -42,7 +42,7 @@ public class OhnoProcedure {
 					_ent.getServer().getCommands().performPrefixedCommand(
 							new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
 									_ent.level().getServer(), _ent),
-							("tp ^ ^ ^" + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(GerioEnchantments.WATER_FALL_DAMAGE.get()))));
+							("tp ^ ^ ^" + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(GeriorandomstuffModEnchantments.WATER_FALL_DAMAGE.get()))));
 				}
 			}
 		}

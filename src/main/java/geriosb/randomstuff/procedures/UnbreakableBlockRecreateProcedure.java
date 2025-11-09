@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 
 import javax.annotation.Nullable;
 
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlocks;
 
 @Mod.EventBusSubscriber
 public class UnbreakableBlockRecreateProcedure {
@@ -24,11 +24,11 @@ public class UnbreakableBlockRecreateProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
-		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == GerioBlocks.UNBREAKABLE_BLOCK.get()) {
+		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == GeriorandomstuffModBlocks.UNBREAKABLE_BLOCK.get()) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
-			world.setBlock(BlockPos.containing(x, y, z), GerioBlocks.UNBREAKABLE_BLOCK.get().defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y, z), GeriorandomstuffModBlocks.UNBREAKABLE_BLOCK.get().defaultBlockState(), 3);
 		}
 	}
 }

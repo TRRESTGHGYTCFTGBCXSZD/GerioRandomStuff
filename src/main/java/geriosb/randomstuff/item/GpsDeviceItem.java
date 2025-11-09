@@ -28,8 +28,6 @@ import net.minecraft.world.item.Rarity;
 
 import geriosb.randomstuff.block.entity.RemoteStorageBlockEntity;
 
-import geriosb.randomstuff.GerioBlocks;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceKey;

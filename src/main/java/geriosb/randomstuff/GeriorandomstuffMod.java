@@ -43,6 +43,7 @@ import java.util.AbstractMap;
 
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import geriosb.randomstuff.block.InstantGasPipeBlock;
+import geriosb.randomstuff.init.*;
 
 @Mod("geriorandomstuff")
 public class GeriorandomstuffMod {
@@ -52,24 +53,22 @@ public class GeriorandomstuffMod {
 	public GeriorandomstuffMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-		GerioSounds.REGISTRY.register(bus);
-		GerioBlocks.REGISTERBLOCK.register(bus); // blocks and block entities bundled in one
-		GerioBlocks.REGISTERTILEENTITY.register(bus); // blocks and block entities bundled in one
-		GerioItems.REGISTRY.register(bus);
-
-		GerioEnchantments.REGISTRY.register(bus);
-		GerioGUIs.REGISTERMENU.register(bus);
-		//GeriorandomstuffModFeatures.REGISTRY.register(bus);
-
-		GerioGUIs.REGISTERTAB.register(bus);
-		GerioFluids.REGISTERFLUID.register(bus);
-		GerioFluids.REGISTERTYPE.register(bus);
+		GeriorandomstuffModBlockEntities.REGISTRY.register(bus);
+		GeriorandomstuffModBlocks.REGISTRY.register(bus);
+		GeriorandomstuffModEnchantments.REGISTRY.register(bus);
+		GeriorandomstuffModFeatures.REGISTRY.register(bus);
+		GeriorandomstuffModFluids.REGISTRY.register(bus);
+		GeriorandomstuffModFluidTypes.REGISTRY.register(bus);
+		GeriorandomstuffModItems.REGISTRY.register(bus);
+		GeriorandomstuffModMenus.REGISTRY.register(bus);
+		GeriorandomstuffModSounds.REGISTRY.register(bus);
+		GeriorandomstuffModTabs.REGISTRY.register(bus);
 		
 		//GerioItems.REGISTRY.register(bus); // for ponder
 	}
 
     public static ResourceLocation rl(String path) {
-        return new ResourceLocation(GeriorandomstuffMod.MODID, path);
+        return new ResourceLocation("geriorandomstuff", path);
     }
 
 	private static final String PROTOCOL_VERSION = "1";

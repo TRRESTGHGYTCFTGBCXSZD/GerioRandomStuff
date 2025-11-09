@@ -30,14 +30,14 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 import geriosb.randomstuff.world.inventory.YoncrushMenu;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 public class YoncrusherBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(18, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public YoncrusherBlockEntity(BlockPos position, BlockState state) {
-		super(GerioBlocks.YONCRUSHER_ENTITY.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.YONCRUSHER.get(), position, state);
 	}
 
 	@Override

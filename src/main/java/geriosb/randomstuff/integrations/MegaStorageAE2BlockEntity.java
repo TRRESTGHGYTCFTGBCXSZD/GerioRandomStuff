@@ -23,7 +23,7 @@ import geriosb.randomstuff.caps.MegaStorageItemHandler;
 import geriosb.randomstuff.caps.MegaStorageMEHandler;
 import geriosb.randomstuff.integrations.InternalItemHandlerAdapter;
 import geriosb.randomstuff.integrations.IMegaStorageBlockEntity;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 import net.minecraft.core.Direction;
 
 import appeng.blockentity.grid.AENetworkInvBlockEntity;
@@ -43,7 +43,7 @@ public class MegaStorageAE2BlockEntity extends AENetworkInvBlockEntity // they a
 	private final InternalItemHandlerAdapter rehandler = new InternalItemHandlerAdapter(handler);
 
 	public MegaStorageAE2BlockEntity(BlockPos position, BlockState state) {
-		super(GerioBlocks.MEGA_STORAGE_ENTITY.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.MEGA_STORAGE.get(), position, state);
         this.getMainNode().setFlags(GridFlags.REQUIRE_CHANNEL);
         this.getMainNode().addService(IStorageProvider.class, this);
 	}

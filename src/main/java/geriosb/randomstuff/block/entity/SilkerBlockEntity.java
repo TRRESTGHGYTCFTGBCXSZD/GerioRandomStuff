@@ -28,14 +28,14 @@ import java.util.stream.IntStream;
 import io.netty.buffer.Unpooled;
 
 import geriosb.randomstuff.world.inventory.SilkerUpMenu;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 public class SilkerBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public SilkerBlockEntity(BlockPos position, BlockState state) {
-		super(GerioBlocks.SILKER_ENTITY.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.SILKER.get(), position, state);
 	}
 
 	@Override

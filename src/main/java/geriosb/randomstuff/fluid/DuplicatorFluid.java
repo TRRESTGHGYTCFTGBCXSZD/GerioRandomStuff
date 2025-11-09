@@ -8,13 +8,14 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.LiquidBlock;
 
-import geriosb.randomstuff.GerioItems;
-import geriosb.randomstuff.GerioFluids;
-import geriosb.randomstuff.GerioBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModItems;
+import geriosb.randomstuff.init.GeriorandomstuffModFluids;
+import geriosb.randomstuff.init.GeriorandomstuffModFluidTypes;
+import geriosb.randomstuff.init.GeriorandomstuffModBlocks;
 
 public abstract class DuplicatorFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> GerioFluids.DUPLICATOR_TYPE.get(), () -> GerioFluids.DUPLICATOR.get(),
-			() -> GerioFluids.FLOWING_DUPLICATOR.get()).explosionResistance(100f).bucket(() -> GerioItems.DUPLICATOR_BUCKET.get()).block(() -> (LiquidBlock) GerioBlocks.DUPLICATOR.get());
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> GeriorandomstuffModFluidTypes.DUPLICATOR_TYPE.get(), () -> GeriorandomstuffModFluids.DUPLICATOR.get(),
+			() -> GeriorandomstuffModFluids.FLOWING_DUPLICATOR.get()).explosionResistance(100f).bucket(() -> GeriorandomstuffModItems.DUPLICATOR_BUCKET.get()).block(() -> (LiquidBlock) GeriorandomstuffModBlocks.DUPLICATOR.get());
 
 	private DuplicatorFluid() {
 		super(PROPERTIES);

@@ -6,10 +6,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BucketItem;
 
-import geriosb.randomstuff.GerioFluids;
+import geriosb.randomstuff.init.GeriorandomstuffModFluids;
 
 public class DuplicatorItem extends BucketItem {
 	public DuplicatorItem() {
-		super(GerioFluids.DUPLICATOR, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON));
+		super(GeriorandomstuffModFluids.DUPLICATOR, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON));
 	}
 }
