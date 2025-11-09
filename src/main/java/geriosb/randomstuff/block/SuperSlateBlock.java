@@ -125,12 +125,12 @@ public class SuperSlateBlock extends BlockCircleComponent implements EntityBlock
         return allDirs;
     }
 
-    @SoftImplement("forge")
+    /*@SoftImplement("forge")
     public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos,
         Player player) {
         BlockEntity be = level.getBlockEntity(pos);
         if (be instanceof SuperSlateBlockEntity slate) {
-            ItemStack stack = new ItemStack(GerioItems.SUPER_SLATE);
+            ItemStack stack = new ItemStack(GerioItems.SUPER_SLATE.get());
             if (slate.getIotaTag() != null) {
                 var beTag = NBTHelper.getOrCreateCompound(stack, "BlockEntityTag");
                 beTag.put(SuperSlateBlockEntity.TAG_IOTA, slate.getIotaTag());
@@ -139,7 +139,7 @@ public class SuperSlateBlock extends BlockCircleComponent implements EntityBlock
         }
 
         return new ItemStack(this);
-    }
+    }*/
 
     @Override
     public Direction normalDir(BlockPos pos, BlockState bs, Level world, int recursionLeft) {

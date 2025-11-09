@@ -64,7 +64,7 @@ public class GerioGUIs {
 				// some black magic
 				tabData.accept(GerioBlocks.TELEKINESIS_SETTER.get().asItem());
 				tabData.accept(GerioBlocks.SILKER.get().asItem());
-				tabData.accept(GerioItems.SUPER_SLATE);
+				//tabData.accept(GerioItems.SUPER_SLATE.get());
 				tabData.accept(GerioBlocks.YONCRUSHER.get().asItem());
 				tabData.accept(GerioBlocks.REMOTE_STORAGE.get().asItem());
 				tabData.accept(GerioBlocks.UNBREAKABLE_BLOCK.get().asItem());

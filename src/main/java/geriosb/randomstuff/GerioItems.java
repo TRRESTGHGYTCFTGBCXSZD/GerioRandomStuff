@@ -1,4 +1,4 @@
-//For custom classes about items, Use something that is outside of MCreator's Rebuild, to use classes that you'd like to.
+// MCreator is no more. We are free to make anything.
 package geriosb.randomstuff;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -61,8 +61,7 @@ public class GerioItems {
 	public static final RegistryObject<Item> INSTANT_GAS_PIPE = geriopipes(GerioBlocks.INSTANT_GAS_PIPE);
 	public static final RegistryObject<Item> MEGA_STORAGE = block(GerioBlocks.MEGA_STORAGE);
 	public static final RegistryObject<Item> GERIO_BLOCK = daegari(GerioBlocks.GERIO_BLOCK);
-	public static final SuperSlateItem SUPER_SLATE = new SuperSlateItem(GerioBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64));
-	public static final RegistryObject<Item> SUPER_SLATE_REG = REGISTRY.register(GerioBlocks.SUPER_SLATE.getId().getPath(), () -> SUPER_SLATE);
+	//public static final RegistryObject<Item> SUPER_SLATE = REGISTRY.register("super_slate", () -> new SuperSlateItem(GerioBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
