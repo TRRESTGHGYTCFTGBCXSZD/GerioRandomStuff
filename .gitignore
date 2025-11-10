@@ -4,3 +4,5 @@ build
 run
 .mcreator
 cmd here.bat
+autobuild.bat
+.idea/
