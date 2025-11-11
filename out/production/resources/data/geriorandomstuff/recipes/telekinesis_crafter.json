@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "telekinesis",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "geriorandomstuff:duplicator"
+    },
+    "1": {
+      "item": "geriorandomstuff:gussunhead"
+    },
+    "2": {
+      "item": "geriorandomstuff:duplicator"
+    },
+    "3": {
+      "item": "geriorandomstuff:gussunhead"
+    },
+    "4": {
+      "item": "geriorandomstuff:duplicator"
+    },
+    "5": {
+      "item": "geriorandomstuff:gussunhead"
+    },
+    "6": {
+      "item": "geriorandomstuff:duplicator"
+    },
+    "7": {
+      "item": "geriorandomstuff:gussunhead"
+    },
+    "8": {
+      "item": "geriorandomstuff:duplicator"
+    }
+  },
+  "result": {
+    "item": "geriorandomstuff:telekinesis_setter",
+    "count": 1
+  }
+}

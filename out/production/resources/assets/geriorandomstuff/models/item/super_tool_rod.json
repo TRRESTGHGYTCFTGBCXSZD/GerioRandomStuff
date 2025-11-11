@@ -1,0 +1,7 @@
+{
+  "parent": "geriorandomstuff:custom/infinitethinness",
+  "textures": {
+    "missing": "geriorandomstuff:block/dead_body",
+    "particle": "geriorandomstuff:item/new_supertool_dead"
+  }
+}

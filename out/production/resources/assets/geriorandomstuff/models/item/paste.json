@@ -1,0 +1,7 @@
+{
+  "parent": "geriorandomstuff:custom/infinitethinness",
+  "textures": {
+    "missing": "geriorandomstuff:block/download_1",
+    "particle": "geriorandomstuff:item/geriogerio"
+  }
+}

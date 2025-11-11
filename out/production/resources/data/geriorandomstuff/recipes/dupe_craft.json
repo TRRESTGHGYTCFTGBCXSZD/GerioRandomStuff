@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "geriorandomstuff:congealed_duplicator"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "geriorandomstuff:liquid_duplicator_block",
+    "count": 1
+  }
+}

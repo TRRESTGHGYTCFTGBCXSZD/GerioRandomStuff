@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "geriorandomstuff:block/super_slate"
+    },
+    "facing=east": {
+      "model": "geriorandomstuff:block/super_slate",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "geriorandomstuff:block/super_slate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "geriorandomstuff:block/super_slate",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "geriorandomstuff:block/super_slate",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "geriorandomstuff:block/super_slate",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "geriorandomstuff:instant_pipe_base_bundle"
+    },
+    {
+      "item": "create:fluid_pipe"
+    }
+  ],
+  "results": [
+    {
+      "item": "geriorandomstuff:instant_liquid_pipe",
+      "count": 56
+    }
+  ]
+}

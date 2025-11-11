@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "features": "geriorandomstuff:duplicator_feature",
+  "step": "lakes"
+}

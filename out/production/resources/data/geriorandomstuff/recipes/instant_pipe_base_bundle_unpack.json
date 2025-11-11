@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "geriorandomstuff:instant_pipe_base_bundle"
+    }
+  ],
+  "result": {
+    "item": "geriorandomstuff:instant_pipe_base",
+    "count": 56
+  }
+}

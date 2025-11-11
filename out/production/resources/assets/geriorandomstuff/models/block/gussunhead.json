@@ -1,0 +1,9 @@
+{
+  "parent": "geriorandomstuff:custom/gussun_ball",
+  "textures": {
+    "all": "geriorandomstuff:block/new_supertool",
+    "particle": "geriorandomstuff:block/new_supertool",
+    "0": "geriorandomstuff:block/new_supertool"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "geriorandomstuff:block/outlet",
+    "up": "geriorandomstuff:block/outlet",
+    "north": "geriorandomstuff:block/outlet",
+    "east": "geriorandomstuff:block/outlet",
+    "south": "geriorandomstuff:block/outlet",
+    "west": "geriorandomstuff:block/outlet",
+    "particle": "geriorandomstuff:block/outlet"
+  },
+  "render_type": "solid"
+}

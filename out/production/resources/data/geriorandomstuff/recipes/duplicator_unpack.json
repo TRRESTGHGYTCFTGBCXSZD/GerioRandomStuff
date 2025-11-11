@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "unpackduplicator",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/duplicator"
+    }
+  ],
+  "result": {
+    "item": "geriorandomstuff:congealed_duplicator_div_9",
+    "count": 9
+  }
+}

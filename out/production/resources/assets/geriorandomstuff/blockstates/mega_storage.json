@@ -1,0 +1,10 @@
+{
+	"variants":{
+		"": [
+			{"model":"geriorandomstuff:block/mega_storage", "x": 180 },
+			{"model":"geriorandomstuff:block/mega_storage", "x": 180, "y": 90 },
+			{"model":"geriorandomstuff:block/mega_storage", "x": 180, "y": 180 },
+			{"model":"geriorandomstuff:block/mega_storage", "x": 180, "y": 270 }
+		]
+	}
+}

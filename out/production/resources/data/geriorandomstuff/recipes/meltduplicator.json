@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "geriorandomstuff:congealed_duplicator"
+  },
+  "result": {
+    "fluid": "geriorandomstuff:duplicator",
+    "amount": 810
+  },
+  "temperature": 1500,
+  "time": 100
+}

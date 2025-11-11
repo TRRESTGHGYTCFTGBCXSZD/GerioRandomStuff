@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe"
+    },
+    "facing=east": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "minecraft:geriosbmintyredstone/geriosb_mod/pipe",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "geriorandomstuff:block/gerio_block"
+    },
+    "facing=east": {
+      "model": "geriorandomstuff:block/gerio_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "geriorandomstuff:block/gerio_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "geriorandomstuff:block/gerio_block",
+      "y": 270
+    }
+  }
+}

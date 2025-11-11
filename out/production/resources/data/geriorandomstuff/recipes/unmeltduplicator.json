@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:casting_basin",
+  "fluid": {
+    "fluid": "geriorandomstuff:duplicator",
+    "amount": 810
+  },
+  "result": "geriorandomstuff:congealed_duplicator",
+  "cooling_time": 100
+}

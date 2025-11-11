@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "geriorandomstuff:block/gerio_bottom",
+    "up": "geriorandomstuff:block/gerio_top",
+    "north": "geriorandomstuff:block/gerio_front",
+    "east": "geriorandomstuff:block/gerio_side",
+    "south": "geriorandomstuff:block/gerio_side",
+    "west": "geriorandomstuff:block/gerio_side",
+    "particle": "geriorandomstuff:block/geriogerio"
+  },
+  "render_type": "solid"
+}
