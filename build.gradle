@@ -4,8 +4,8 @@ plugins {
 }
 
 version = '1.0'
-group = 'com.yourname.modid'
-archivesBaseName = 'modid'
+group = 'geriosb.randomstuff'
+archivesBaseName = 'geriorandomstuff'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
