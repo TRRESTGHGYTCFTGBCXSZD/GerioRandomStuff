@@ -32,11 +32,11 @@ public enum MegaStorageProvider  implements
 		ListTag list = accessor.getServerData().getList("BigStorage", Tag.TAG_COMPOUND);
       tooltip.add(
         Component.translatable(
-          "randomness.uniqueitems",
+          "gui.geriorandomstuff.uniqueitems",
           list.size()
         )
       );
-		long elems = 0;
+		long elems = 9;
         for (Tag base : list) {
             if (!(base instanceof CompoundTag itemTag))
                 continue;
@@ -46,15 +46,21 @@ public enum MegaStorageProvider  implements
 			String count = itemTag.getString("Count");
 			
 			if (count.length() >= 7) { // since the counts are string-based, we don't use log, power, or something like that, it's not a float, it's a string
-			String[] measurions = {"Un","K","M","B","T","Qa","Qu","Sx","Sp","Oc","No","De","UDe","DDe","TDe","QDe","QuDe","SDe","SpDe","ODe","NDe","Vg","UVg","DVg","TVg","QVg","QuVg","SVg","SpVg","OVg","NVg",};
-			
-			StringBuffer recount = new StringBuffer(count.substring(0,3));
-			recount = recount.insert(((count.length() - 1)%3)+1,".");
-			count = recount + (String) measurions[(count.length() - 1) / 3];
+				String[] measurions = {"Un","K","M","B","T","Qa","Qu","Sx","Sp","Oc","No","De","UDe","DDe","TDe","QDe","QuDe","SDe","SpDe","ODe","NDe","Vg","UVg","DVg","TVg","QVg","QuVg","SVg","SpVg","OVg","NVg",};
+				
+				StringBuffer recount = new StringBuffer(count.substring(0,4));
+				if (((count.length() - 1) / 3) >= measurions.length) {
+					recount = recount.insert(1,".");
+					count = recount + "E+" + (count.length() - 1);
+				} else {
+					recount = recount.insert(((count.length() - 1)%3)+1,".");
+					count = recount + (String) measurions[(count.length() - 1) / 3];
+				}
 			}
-			IElement icon = elements.item(stack, 0.5f, count);
-			if (elems++ == 0) {
+			IElement icon = elements.item(stack, 1f, count);
+			if (elems++ == 9) {
 				tooltip.add(icon);
+				elems = 0;
 			} else {
 				tooltip.append(icon);
 			}

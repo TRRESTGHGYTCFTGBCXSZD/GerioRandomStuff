@@ -1,18 +1,3 @@
-/*
- *    MCreator note:
- *
- *    If you lock base mod element files, you can edit this file and it won't get overwritten.
- *    If you change your modid or package, you need to apply these changes to this file MANUALLY.
- *
- *    Settings in @Mod annotation WON'T be changed in case of the base mod element
- *    files lock too, so you need to set them manually here in such case.
- *
- *    If you do not lock base mod element files in Workspace settings, this file
- *    will be REGENERATED on each build.
- *
- */
-
-// It's. Time. To. Break. Shackles. of. MCreator.
 
 package geriosb.randomstuff;
 
@@ -42,6 +27,7 @@ import java.util.ArrayList;
 import java.util.AbstractMap;
 
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.ModList;
 import geriosb.randomstuff.block.InstantGasPipeBlock;
 import geriosb.randomstuff.init.*;
 
@@ -63,6 +49,7 @@ public class GeriorandomstuffMod {
 		GeriorandomstuffModMenus.REGISTRY.register(bus);
 		GeriorandomstuffModSounds.REGISTRY.register(bus);
 		GeriorandomstuffModTabs.REGISTRY.register(bus);
+		
 		
 		//GerioItems.REGISTRY.register(bus); // for ponder
 	}

@@ -51,5 +51,6 @@
   "block.geriorandomstuff.mega_storage": "MegaStorage",
   "block.geriorandomstuff.instant_liquid_pipe": "Instant Liquid Pipe",
   "gui.geriorandomstuff.dupe.button_dupe": "Dupe",
-  "block.geriorandomstuff.unbreakable_block": "Unbreakable Block"
+  "block.geriorandomstuff.unbreakable_block": "Unbreakable Block",
+  "gui.geriorandomstuff.uniqueitems": "%1$s Unique Items"
 }

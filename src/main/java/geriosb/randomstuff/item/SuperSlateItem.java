@@ -31,6 +31,8 @@ import java.util.Optional;
 import static at.petrak.hexcasting.api.HexAPI.modLoc;
 
 import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
+import net.minecraft.world.item.TooltipFlag;
+import java.util.List;
 
 public class SuperSlateItem extends BlockItem implements IotaHolderItem {
     public static final ResourceLocation WRITTEN_PRED = modLoc("written");
@@ -80,5 +82,11 @@ public class SuperSlateItem extends BlockItem implements IotaHolderItem {
                 var beTag = NBTHelper.getOrCreateCompound(stack, "BlockEntityTag");
                 beTag.put(SuperSlateBlockEntity.TAG_IOTA, IotaType.serialize(datum));
             }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
+        TooltipFlag pIsAdvanced) {
+        IotaHolderItem.appendHoverText(this, pStack, pTooltipComponents, pIsAdvanced);
     }
 }

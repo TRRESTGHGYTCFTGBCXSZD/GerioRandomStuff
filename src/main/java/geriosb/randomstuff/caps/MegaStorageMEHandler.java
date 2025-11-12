@@ -52,7 +52,7 @@ public class MegaStorageMEHandler implements MEStorage {
     public void getAvailableStacks(KeyCounter out) {
 		List<MegaStorageItemHandler.ItemEntry> idiom = link.GetItemThingy();
 		for (MegaStorageItemHandler.ItemEntry entry : idiom) {
-			out.add(AEItemKey.of(entry.stack),entry.count.longValue());
+			out.add(AEItemKey.of(entry.stack),entry.count.min(BigInteger.valueOf(Long.MAX_VALUE)).longValue());
 		}
     }
 

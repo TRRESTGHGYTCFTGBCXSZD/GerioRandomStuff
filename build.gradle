@@ -1,6 +1,7 @@
 plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 version = '1.0'
@@ -88,6 +89,7 @@ repositories {
             includeGroup "dev.architectury"
         }
     }
+    mavenCentral()
 } // SHIVER ME TIMBERS
 
 dependencies {
@@ -105,6 +107,7 @@ dependencies {
 	
 	implementation fg.deobf("maven.modrinth:jade:11.13.2+forge")
 	implementation ("at.petra-k.hexcasting:hexcasting-forge-1.20.1:0.11.2-pre-750")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -112,4 +115,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 apply from: 'mcreator.gradle'
+kotlin {
+    jvmToolchain(17)
+}
 
