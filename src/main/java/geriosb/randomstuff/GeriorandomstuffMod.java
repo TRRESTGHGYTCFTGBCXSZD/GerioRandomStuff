@@ -1,6 +1,13 @@
 
 package geriosb.randomstuff;
 
+import at.petrak.hexcasting.api.casting.iota.IotaType;
+import at.petrak.hexcasting.api.client.ScryingLensOverlayRegistry;
+import at.petrak.hexcasting.common.lib.HexItems;
+import com.mojang.datafixers.util.Pair;
+import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -32,6 +39,7 @@ import geriosb.randomstuff.block.InstantGasPipeBlock;
 import geriosb.randomstuff.init.*;
 
 @Mod("geriorandomstuff")
+@Mod.EventBusSubscriber(modid = "geriorandomstuff", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GeriorandomstuffMod {
 	public static final Logger LOGGER = LogManager.getLogger(GeriorandomstuffMod.class);
 	public static final String MODID = "geriorandomstuff";
@@ -49,10 +57,18 @@ public class GeriorandomstuffMod {
 		GeriorandomstuffModMenus.REGISTRY.register(bus);
 		GeriorandomstuffModSounds.REGISTRY.register(bus);
 		GeriorandomstuffModTabs.REGISTRY.register(bus);
+        if (ModList.get().isLoaded("hexcasting")) {
+            GeriorandomstuffModHexActions.REGISTRY.register(bus);
+        }
 		
 		
 		//GerioItems.REGISTRY.register(bus); // for ponder
 	}
+    @SubscribeEvent
+    public static void onCommonSetup(FMLCommonSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(GeriorandomstuffMod.class);
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    }
 
     public static ResourceLocation rl(String path) {
         return new ResourceLocation("geriorandomstuff", path);

@@ -8,7 +8,9 @@ import at.petrak.hexcasting.api.casting.ActionRegistryEntry;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.common.lib.HexRegistries;
+import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import geriosb.randomstuff.hexactions.OpNumericCreator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +30,10 @@ import geriosb.randomstuff.block.entity.CongealedDuplicatorBlockEntity;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 import net.minecraftforge.fml.ModList;
+import net.minecraft.core.Registry;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class GeriorandomstuffModHexActions { //seriously? kotlin!?
     // WEST awqaw, SOUTH_EAST w, EAST edaq, EAST daed, NORTH_WEST waa, WEST aqed, WEST awqaq, NORTH_WEST dew, SOUTH_EAST qaqede, EAST awqaq, EAST aqawq, EAST
@@ -44,6 +50,7 @@ public class GeriorandomstuffModHexActions { //seriously? kotlin!?
     // EAST aqawq (E)
     // EAST (-.)
 	public static final DeferredRegister<ActionRegistryEntry> REGISTRY = DeferredRegister.create(HexRegistries.ACTION, GeriorandomstuffMod.MODID);
-	public static final RegistryObject<ActionRegistryEntry> NUMBER_FORMATTER = REGISTRY.register("number_formatter", new ActionRegistryEntry(HexPattern.fromAngles("qdwdq",
-            HexDir.NORTH_EAST), OpNumericCreator.INSTANCE));
+	public static final RegistryObject<ActionRegistryEntry> NUMBER_FORMATTER = REGISTRY.register("number_formatter",
+            () -> new ActionRegistryEntry(HexPattern.fromAngles("dqddeawawaawdwdadwwdwwd", HexDir.EAST), OpNumericCreator.INSTANCE));
+    // WHY FORGE NO WAY WORK
 }

@@ -52,5 +52,9 @@
   "block.geriorandomstuff.instant_liquid_pipe": "Instant Liquid Pipe",
   "gui.geriorandomstuff.dupe.button_dupe": "Dupe",
   "block.geriorandomstuff.unbreakable_block": "Unbreakable Block",
-  "gui.geriorandomstuff.uniqueitems": "%1$s Unique Items"
+  "gui.geriorandomstuff.uniqueitems": "%1$s Unique Items",
+  "hexcasting.mishap.dividebyzero.malform": "Attempted to create a malformed number",
+  "hexcasting.mishap.dividebyzero.toolarge": "Attempted to create a number past it's maximum",
+  "hexcasting.mishap.geriorandomstuff.decimalexponents": "Cannot use decimal exponents",
+  "hexcasting.action.geriorandomstuff:number_formatter": "Archaeologist's Purification"
 }
