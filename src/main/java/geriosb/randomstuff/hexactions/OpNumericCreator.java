@@ -199,7 +199,7 @@ public final class OpNumericCreator implements ConstMediaAction { //why kotlin w
         sideEffects.add(new OperatorSideEffect.ConsumeMedia(this.getMediaCost()));
 
         CastingImage image2 = image.copy(stack, 0, new ArrayList<CastingImage.ParenthesizedIota>(), false, (int) (image.getOpsConsumed() + result.getOpCount()), new CompoundTag()); // JAVA, CAN YOU STOP SUPPLEMENTING OPTIONAL ARGUMENTS!?!?
-        return new OperationResult(image2, sideEffects, continuation, HexEvalSounds.NORMAL_EXECUTE);
+        return new OperationResult(image2, sideEffects, continuation, HexEvalSounds.HERMES);
     } // Java, what are you doing about kotlin's open interfaces that don't even need to be overridden!?
 
     @Override

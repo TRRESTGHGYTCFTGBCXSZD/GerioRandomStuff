@@ -6,11 +6,11 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.Level;
 
 public interface IGPSableBlock {
 	
-	void SetPositionAndDimension(GPSLocation loc);
+	void SetGPSLocation(GPSLocation loc);
+    GPSLocation GetGPSLocation();
 	
 	default void saveGPSLocToNBT(CompoundTag tag, GPSLocation loc){
 		if (loc == null) return; // no information means do not save

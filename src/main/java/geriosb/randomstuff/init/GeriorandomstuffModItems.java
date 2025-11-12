@@ -62,6 +62,7 @@ public class GeriorandomstuffModItems {
 	public static final RegistryObject<Item> MEGA_STORAGE = block(GeriorandomstuffModBlocks.MEGA_STORAGE);
 	public static final RegistryObject<Item> GERIO_BLOCK = daegari(GeriorandomstuffModBlocks.GERIO_BLOCK);
 	public static final RegistryObject<Item> SUPER_SLATE = REGISTRY.register(GeriorandomstuffModBlocks.SUPER_SLATE.getId().getPath(), () -> new SuperSlateItem(GeriorandomstuffModBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> REMOTE_SLATE = block(GeriorandomstuffModBlocks.REMOTE_SLATE);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

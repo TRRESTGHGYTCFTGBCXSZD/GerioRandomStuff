@@ -54,5 +54,6 @@ public class GeriorandomstuffModBlocks {
 	public static final RegistryObject<Block> MEGA_STORAGE = REGISTRY.register("mega_storage", () -> new MegaStorageBlock());
 	public static final RegistryObject<Block> GERIO_BLOCK = REGISTRY.register("gerio_block", () -> new GerioBlockBlock());
 	public static final RegistryObject<Block> SUPER_SLATE = REGISTRY.register("super_slate", () -> new SuperSlateBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES).strength(4f, 4f).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> REMOTE_SLATE = REGISTRY.register("remote_slate", () -> new RemoteStorageBlock());
 
 }

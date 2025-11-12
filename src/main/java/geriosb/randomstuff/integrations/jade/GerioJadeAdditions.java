@@ -1,5 +1,7 @@
 package geriosb.randomstuff.integrations.jade;
 
+import geriosb.randomstuff.integrations.jade.blocks.GPSableProvider;
+import net.minecraft.world.level.block.Block;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaCommonRegistration;
 import snownee.jade.api.IWailaPlugin;
@@ -41,5 +43,6 @@ public class GerioJadeAdditions implements IWailaPlugin {
 		if (ModList.get().isLoaded("hexcasting")) {
 			registration.registerBlockComponent(SuperSlateProvider.INSTANCE, SuperSlateBlock.class);
 		}
+        registration.registerBlockComponent(GPSableProvider.INSTANCE, Block.class);
 	}
 }

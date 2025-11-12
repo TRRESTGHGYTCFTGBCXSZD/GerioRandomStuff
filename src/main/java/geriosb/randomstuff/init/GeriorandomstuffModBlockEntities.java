@@ -34,6 +34,7 @@ public class GeriorandomstuffModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> REMOTE_STORAGE = register("remote_storage", GeriorandomstuffModBlocks.REMOTE_STORAGE, RemoteStorageBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> MEGA_STORAGE = register("mega_storage", GeriorandomstuffModBlocks.MEGA_STORAGE, ModList.get().isLoaded("ae2") ? MegaStorageAE2BlockEntity::new : MegaStorageBlockEntity::new );
 	public static final RegistryObject<BlockEntityType<?>> SUPER_SLATE = register("super_slate", GeriorandomstuffModBlocks.SUPER_SLATE, SuperSlateBlockEntity::new);
+    public static final RegistryObject<BlockEntityType<?>> REMOTE_SLATE = register("remote_slate", GeriorandomstuffModBlocks.REMOTE_SLATE, RemoteStorageBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

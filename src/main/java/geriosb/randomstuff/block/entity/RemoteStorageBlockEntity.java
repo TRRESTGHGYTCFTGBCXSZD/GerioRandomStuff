@@ -176,7 +176,7 @@ public class RemoteStorageBlockEntity extends BlockEntity implements IGPSableBlo
 	}
 
 	@Override
-	public void SetPositionAndDimension(GPSLocation targetblock) {
+	public void SetGPSLocation(GPSLocation targetblock) {
 		targetBlock = targetblock;
 		this.setChanged();
 	
@@ -192,5 +192,9 @@ public class RemoteStorageBlockEntity extends BlockEntity implements IGPSableBlo
         if (!targetLevel.isClientSide()) //make sure that this is doing in server
 			targetLevel.sendBlockUpdated(targetBlock.pos,targetLevel.getBlockState(targetBlock.pos),targetLevel.getBlockState(targetBlock.pos), 3);
 	}
+    @Override
+    public GPSLocation GetGPSLocation() {
+        return targetBlock;
+    }
 
 }
