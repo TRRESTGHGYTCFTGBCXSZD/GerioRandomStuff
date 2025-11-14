@@ -27,11 +27,18 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Objects;
 
+import static geriosb.randomstuff.GeriorandomstuffMod.rl;
 import static geriosb.randomstuff.utils.ColorUtils.TweenColor;
 
 public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEntity> {
     private final BlockRenderDispatcher blockRenderer;
-    private static final ResourceLocation superslate = new ResourceLocation(GeriorandomstuffMod.MODID+":block/super_slate");
+    private static final ResourceLocation base = rl("block/super_slate_base");
+    private static final ResourceLocation face_screen_unassigned = rl("block/super_slate_face");
+    private static final ResourceLocation face_screen_assigned = rl("block/super_slate_face_color");
+    private static final ResourceLocation face_emotion_normal = rl("block/super_slate_face_normal");
+    private static final ResourceLocation face_emotion_huh = rl("block/super_slate_face_huh");
+    private static final ResourceLocation face_emotion_dumb = rl("block/super_slate_face_dumb");
+    private static final ResourceLocation face_emotion_sad = rl("block/super_slate_face_sad");
 
     public SuperSlateRenderer(BlockEntityRendererProvider.Context ctx) {
         this.blockRenderer = ctx.getBlockRenderDispatcher();
@@ -89,7 +96,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                 poseStack.last(),           // BlockState to render
                 buffer.getBuffer(RenderType.solid()),
                 null,
-                modelManager.getModel(new ModelResourceLocation(superslate, "baseplate")),
+                modelManager.getModel(new ModelResourceLocation(base,"")),
                 255,
                 255,
                 255,
@@ -101,7 +108,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                 poseStack.last(),           // BlockState to render
                 buffer.getBuffer(RenderType.solid()),
                 null,
-                modelManager.getModel(new ModelResourceLocation(superslate, "screenface_color")),
+                modelManager.getModel(new ModelResourceLocation(face_screen_assigned,"")),
                 (color & 0xff0000) >> 16,
                 (color & 0xff00) >> 8,
                 color & 0xff,
@@ -112,15 +119,15 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
         if (be.getLevel() instanceof ServerLevel warudo) {
             if (IotaType.deserialize(be.getIotaTag(), warudo) instanceof ListIota lister) {
                 int iotas = CountIotas(lister);
-                BakedModel renderface = modelManager.getModel(new ModelResourceLocation(superslate, "emotion_huh"));
+                BakedModel renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
                 if (iotas == 0) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(superslate, "emotion_huh"));
+                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
                 } else if (iotas <= 10) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(superslate, "emotion_normal"));
+                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_normal,""));
                 } else if (iotas <= 20) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(superslate, "emotion_huh"));
+                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
                 } else {
-                    renderface = modelManager.getModel(new ModelResourceLocation(superslate, "emotion_sad"));
+                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_sad,""));
                 }
                 blockRenderer.getModelRenderer().renderModel(
                         poseStack.last(),           // BlockState to render
@@ -141,7 +148,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                         poseStack.last(),           // BlockState to render
                         buffer.getBuffer(RenderType.solid()),
                         null,
-                        modelManager.getModel(new ModelResourceLocation(superslate, "emotion_dumb")),
+                        modelManager.getModel(new ModelResourceLocation(face_emotion_dumb,"")),
                         255,
                         255,
                         255,
@@ -153,7 +160,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                         poseStack.last(),           // BlockState to render
                         buffer.getBuffer(RenderType.solid()),
                         null,
-                        modelManager.getModel(new ModelResourceLocation(superslate, "emotion_huh")),
+                        modelManager.getModel(new ModelResourceLocation(face_emotion_huh,"")),
                         255,
                         255,
                         255,
@@ -165,7 +172,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                         poseStack.last(),           // BlockState to render
                         buffer.getBuffer(RenderType.solid()),
                         null,
-                        modelManager.getModel(new ModelResourceLocation(superslate, "emotion_normal")),
+                        modelManager.getModel(new ModelResourceLocation(face_emotion_normal,"")),
                         255,
                         255,
                         255,
