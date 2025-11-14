@@ -4,6 +4,7 @@
  */
 package geriosb.randomstuff.init;
 
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
@@ -33,9 +34,9 @@ public class GeriorandomstuffModTabs {
 				tabData.accept(GeriorandomstuffModBlocks.YONCRUSHER.get().asItem());
 				//black magic
 				tabData.accept(GeriorandomstuffModBlocks.MEGA_STORAGE.get().asItem());
-				tabData.accept(GeriorandomstuffModBlocks.SUPER_SLATE.get().asItem());
+                if (ModList.get().isLoaded("hexcasting")) tabData.accept(GeriorandomstuffModBlocks.SUPER_SLATE.get().asItem());
 				tabData.accept(GeriorandomstuffModBlocks.REMOTE_STORAGE.get().asItem());
-                tabData.accept(GeriorandomstuffModBlocks.REMOTE_SLATE.get().asItem());
+                if (ModList.get().isLoaded("hexcasting")) tabData.accept(GeriorandomstuffModBlocks.REMOTE_SLATE.get().asItem());
 				tabData.accept(GeriorandomstuffModBlocks.TELEKINESIS_SETTER.get().asItem());
 				tabData.accept(GeriorandomstuffModItems.DUPLICATOR_BUCKET.get());
 				tabData.accept(GeriorandomstuffModBlocks.CONGEALED_DUPLICATOR.get().asItem());

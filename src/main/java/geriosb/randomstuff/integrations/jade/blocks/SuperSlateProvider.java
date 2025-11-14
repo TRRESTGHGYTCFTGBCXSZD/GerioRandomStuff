@@ -4,18 +4,12 @@ import at.petrak.hexcasting.api.casting.iota.IotaType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
+import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlockEntity;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import snownee.jade.api.ui.IElementHelper;
-import snownee.jade.api.ui.IElement;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
-import net.minecraft.world.item.ItemStack;
 
 import geriosb.randomstuff.integrations.jade.GerioJadeAdditions;
 

@@ -7,13 +7,13 @@ import snownee.jade.api.IWailaCommonRegistration;
 import snownee.jade.api.IWailaPlugin;
 import snownee.jade.api.WailaPlugin;
 
-import geriosb.randomstuff.block.MegaStorageBlock;
-import geriosb.randomstuff.block.entity.MegaStorageBlockEntity;
+import geriosb.randomstuff.common.blocks.cheaters.MegaStorageBlock;
+import geriosb.randomstuff.common.blocks.cheaters.MegaStorageBlockEntity;
 import geriosb.randomstuff.integrations.MegaStorageAE2BlockEntity;
 import geriosb.randomstuff.integrations.jade.blocks.MegaStorageProvider;
 
-import geriosb.randomstuff.block.SuperSlateBlock;
-import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
+import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlock;
+import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlockEntity;
 import geriosb.randomstuff.integrations.jade.blocks.SuperSlateProvider;
 
 import geriosb.randomstuff.GeriorandomstuffMod;

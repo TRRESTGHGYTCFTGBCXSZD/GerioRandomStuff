@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "item/geriosbmintyredstone_redstone",
+	"textures": {
+		"3": "geriorandomstuff:block/tric/huh",
+		"particle": "geriorandomstuff:block/geriogerio"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 15],
+			"to": [16, 16, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "north"}
+			}
+		}
+	]
+}

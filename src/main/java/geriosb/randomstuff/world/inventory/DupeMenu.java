@@ -1,6 +1,7 @@
 
 package geriosb.randomstuff.world.inventory;
 
+import geriosb.randomstuff.common.blocks.cheaters.CongealedDuplicatorBlockEntity;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -70,8 +71,8 @@ public class DupeMenu extends AbstractContainerMenu implements Supplier<Map<Inte
 					});
 			} else { // might be bound to block
 				boundBlockEntity = this.world.getBlockEntity(pos);
-				if (boundBlockEntity != null)
-					boundBlockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+				if (boundBlockEntity instanceof CongealedDuplicatorBlockEntity bbe)
+                    bbe.getguiCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(capability -> {
 						this.internal = capability;
 						this.bound = true;
 					});

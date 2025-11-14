@@ -1,0 +1,155 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "item/geriosbmintyredstone_redstone",
+	"textures": {
+		"2": "geriorandomstuff:block/tric/face",
+		"particle": "geriorandomstuff:block/geriogerio"
+	},
+	"elements": [
+		{
+			"from": [6, 0.5, 15],
+			"to": [10, 15.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [10, 1, 15],
+			"to": [11.5, 15, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [15, 6, 15],
+			"to": [15.5, 10, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [14.5, 4.5, 15],
+			"to": [15, 11.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2.5, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [14, 4, 15],
+			"to": [14.5, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [13.5, 3, 15],
+			"to": [14, 13, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1.5, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [13, 2.5, 15],
+			"to": [13.5, 13.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [12, 2, 15],
+			"to": [13, 14, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [11.5, 1.5, 15],
+			"to": [12, 14.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [4, 1.5, 15],
+			"to": [4.5, 14.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [4.5, 1, 15],
+			"to": [6, 15, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [17, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [0.5, 6, 15],
+			"to": [1, 10, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [1, 4.5, 15],
+			"to": [1.5, 11.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13.5, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [1.5, 4, 15],
+			"to": [2, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [2, 3, 15],
+			"to": [2.5, 13, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14.5, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [2.5, 2.5, 15],
+			"to": [3, 13.5, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		},
+		{
+			"from": [3, 2, 15],
+			"to": [4, 14, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, -1.5, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#2", "cullface": "north"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [-2, -1.5, 0],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+		}
+	]
+}

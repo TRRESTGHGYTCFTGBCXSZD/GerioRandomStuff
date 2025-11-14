@@ -52,6 +52,28 @@
       "model": "geriorandomstuff:block/super_slate",
       "x": 270,
       "y": 270
+    },
+	
+    "baseplate": {
+      "model": "geriorandomstuff:block/super_slate_base"
+    },
+    "screenface": {
+      "model": "geriorandomstuff:block/super_slate_face"
+    },
+    "screenface_color": {
+      "model": "geriorandomstuff:block/super_slate_face_color"
+    },
+    "emotion_normal": {
+      "model": "geriorandomstuff:block/super_slate_face_normal"
+    },
+    "emotion_huh": {
+      "model": "geriorandomstuff:block/super_slate_face_huh"
+    },
+    "emotion_dumb": {
+      "model": "geriorandomstuff:block/super_slate_face_dumb"
+    },
+    "emotion_sad": {
+      "model": "geriorandomstuff:block/super_slate_face_sad"
     }
   }
 }

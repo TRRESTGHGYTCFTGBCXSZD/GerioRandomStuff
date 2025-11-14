@@ -1,13 +1,6 @@
 
 package geriosb.randomstuff;
 
-import at.petrak.hexcasting.api.casting.iota.IotaType;
-import at.petrak.hexcasting.api.client.ScryingLensOverlayRegistry;
-import at.petrak.hexcasting.common.lib.HexItems;
-import com.mojang.datafixers.util.Pair;
-import geriosb.randomstuff.block.entity.SuperSlateBlockEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -35,7 +28,6 @@ import java.util.AbstractMap;
 
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.ModList;
-import geriosb.randomstuff.block.InstantGasPipeBlock;
 import geriosb.randomstuff.init.*;
 
 @Mod("geriorandomstuff")
@@ -58,6 +50,9 @@ public class GeriorandomstuffMod {
 		GeriorandomstuffModSounds.REGISTRY.register(bus);
 		GeriorandomstuffModTabs.REGISTRY.register(bus);
         if (ModList.get().isLoaded("hexcasting")) {
+            GeriorandomstuffModBlocks.HEXREGISTRY.register(bus);
+            GeriorandomstuffModBlockEntities.HEXREGISTRY.register(bus);
+            GeriorandomstuffModItems.HEXREGISTRY.register(bus);
             GeriorandomstuffModHexActions.REGISTRY.register(bus);
         }
 		

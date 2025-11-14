@@ -1,22 +1,13 @@
 package geriosb.randomstuff.integrations.jade.blocks;
 
-import geriosb.randomstuff.caps.IGPSableBlock;
-import geriosb.randomstuff.integrations.IMegaStorageBlockEntity;
+import geriosb.randomstuff.common.lib.IGPSableBlock;
 import geriosb.randomstuff.integrations.jade.GerioJadeAdditions;
-import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
-import snownee.jade.api.IServerDataProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
-import snownee.jade.api.ui.IElement;
-import snownee.jade.api.ui.IElementHelper;
 
 public enum GPSableProvider implements
   IBlockComponentProvider {

@@ -6,11 +6,9 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.Capability;
 
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -19,17 +17,14 @@ import net.minecraft.core.BlockPos;
 
 import javax.annotation.Nullable;
 
-import geriosb.randomstuff.caps.MegaStorageItemHandler;
-import geriosb.randomstuff.caps.MegaStorageMEHandler;
-import geriosb.randomstuff.integrations.InternalItemHandlerAdapter;
-import geriosb.randomstuff.integrations.IMegaStorageBlockEntity;
+import geriosb.randomstuff.common.caps.MegaStorageItemHandler;
+import geriosb.randomstuff.common.caps.MegaStorageMEHandler;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 import net.minecraft.core.Direction;
 
 import appeng.blockentity.grid.AENetworkInvBlockEntity;
 import appeng.api.storage.IStorageProvider;
 import appeng.api.storage.IStorageMounts;
-import appeng.blockentity.AEBaseInvBlockEntity;
 import appeng.api.inventories.InternalInventory;
 import appeng.api.networking.GridFlags;
 import appeng.api.util.AECableType;

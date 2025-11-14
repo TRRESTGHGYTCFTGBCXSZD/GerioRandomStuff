@@ -12,24 +12,24 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
-import geriosb.randomstuff.item.WorstPickaxeItem;
-import geriosb.randomstuff.item.WorstPickaxeBrokenItem;
-import geriosb.randomstuff.item.SuperheatedDuplicatorItem;
-import geriosb.randomstuff.item.SuperToolRodItem;
-import geriosb.randomstuff.item.SuperToolHeadItem;
-import geriosb.randomstuff.item.SAMBADEJANEIROItem;
-import geriosb.randomstuff.item.PasteItem;
-import geriosb.randomstuff.item.InstantPipeBaseItem;
-import geriosb.randomstuff.item.InstantPipeBaseBundleItem;
-import geriosb.randomstuff.item.DuplicatorItem;
-import geriosb.randomstuff.item.DebugSteelItem;
-import geriosb.randomstuff.item.DebugSoloItem;
-import geriosb.randomstuff.item.CongealedDuplicatorDiv9Item;
-import geriosb.randomstuff.item.GpsDeviceItem;
-import geriosb.randomstuff.item.SuperSlateItem;
+import geriosb.randomstuff.common.items.tools.WorstPickaxeItem;
+import geriosb.randomstuff.common.items.tools.WorstPickaxeBrokenItem;
+import geriosb.randomstuff.common.items.cheaters.SuperheatedDuplicatorItem;
+import geriosb.randomstuff.common.items.tools.SuperToolRodItem;
+import geriosb.randomstuff.common.items.tools.SuperToolHeadItem;
+import geriosb.randomstuff.common.items.SAMBADEJANEIROItem;
+import geriosb.randomstuff.common.items.PasteItem;
+import geriosb.randomstuff.common.items.InstantPipeBaseItem;
+import geriosb.randomstuff.common.items.InstantPipeBaseBundleItem;
+import geriosb.randomstuff.common.items.cheaters.DuplicatorItem;
+import geriosb.randomstuff.common.items.DebugSteelItem;
+import geriosb.randomstuff.common.items.DebugSoloItem;
+import geriosb.randomstuff.common.items.cheaters.CongealedDuplicatorDiv9Item;
+import geriosb.randomstuff.common.items.tools.GpsDeviceItem;
+import geriosb.randomstuff.common.items.cheaters.SuperSlateItem;
 import geriosb.randomstuff.GeriorandomstuffMod;
-import geriosb.randomstuff.GerioPipeItem;
-import geriosb.randomstuff.DaegariBlockItem;
+import geriosb.randomstuff.common.items.cheaters.GerioPipeItem;
+import geriosb.randomstuff.common.items.DaegariBlockItem;
 
 public class GeriorandomstuffModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, GeriorandomstuffMod.MODID);
@@ -61,12 +61,17 @@ public class GeriorandomstuffModItems {
 	public static final RegistryObject<Item> INSTANT_GAS_PIPE = geriopipes(GeriorandomstuffModBlocks.INSTANT_GAS_PIPE);
 	public static final RegistryObject<Item> MEGA_STORAGE = block(GeriorandomstuffModBlocks.MEGA_STORAGE);
 	public static final RegistryObject<Item> GERIO_BLOCK = daegari(GeriorandomstuffModBlocks.GERIO_BLOCK);
-	public static final RegistryObject<Item> SUPER_SLATE = REGISTRY.register(GeriorandomstuffModBlocks.SUPER_SLATE.getId().getPath(), () -> new SuperSlateItem(GeriorandomstuffModBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
-    public static final RegistryObject<Item> REMOTE_SLATE = block(GeriorandomstuffModBlocks.REMOTE_SLATE);
+    public static final DeferredRegister<Item> HEXREGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, GeriorandomstuffMod.MODID);
+	public static final RegistryObject<Item> SUPER_SLATE = HEXREGISTRY.register(GeriorandomstuffModBlocks.SUPER_SLATE.getId().getPath(), () -> new SuperSlateItem(GeriorandomstuffModBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> REMOTE_SLATE = hexblock(GeriorandomstuffModBlocks.REMOTE_SLATE);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
 	}
+
+    private static RegistryObject<Item> hexblock(RegistryObject<Block> block) {
+        return HEXREGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+    }
 
 	private static RegistryObject<Item> geriopipes(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new GerioPipeItem(block.get(), new Item.Properties()));
