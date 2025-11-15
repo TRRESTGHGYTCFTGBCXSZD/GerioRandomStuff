@@ -4,6 +4,7 @@
 	"parent": "item/geriosbmintyredstone_redstone",
 	"textures": {
 		"2": "geriorandomstuff:block/tric_side",
+		"3": "geriorandomstuff:block/tric_front",
 		"particle": "geriorandomstuff:block/geriogerio"
 	},
 	"elements": [
@@ -16,6 +17,13 @@
 				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "west"},
 				"up": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "up"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 16],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "north"}
 			}
 		},
 		{
@@ -307,11 +315,12 @@
 	],
 	"groups": [
 		0,
+		1,
 		{
 			"name": "group",
 			"origin": [0, 0, -15],
 			"color": 0,
-			"children": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+			"children": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
 		}
 	]
 }

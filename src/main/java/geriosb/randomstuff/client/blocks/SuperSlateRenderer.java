@@ -50,6 +50,8 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
     private static final ResourceLocation face_emotion_huh = rl("textures/block/tric/huh.png");
     private static final ResourceLocation face_emotion_dumb = rl("textures/block/tric/dumb.png");
     private static final ResourceLocation face_emotion_sad = rl("textures/block/tric/sad.png");
+    private static final ResourceLocation face_emotion_pain = rl("textures/block/tric/critical.png");
+    private static final ResourceLocation face_emotion_braindead = rl("textures/block/tric/mindless.png");
 
     public SuperSlateRenderer(BlockEntityRendererProvider.Context ctx) {
         this.blockRenderer = ctx.getBlockRenderDispatcher();
@@ -70,6 +72,17 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
         } catch (IllegalArgumentException t) {
             return 0;
         }
+    }
+
+    public static int numComplexity(double heavy) {
+        String dude = Double.toString(heavy);
+        int numComplex = 0;
+        for (int maekun = 0; maekun <= dude.length()-2; maekun++) {
+            if (dude.substring(maekun,maekun+1).equals(dude.substring(maekun+1,maekun+2))) {
+                numComplex += 1;
+            }
+        }
+        return numComplex;
     }
 
     private static void vertex(Matrix4f mat, Matrix3f normal, int light, VertexConsumer verts, float x, float y,
@@ -127,11 +140,20 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
         RenderType layer = RenderType.entityCutout(face_screen_assigned);
 
         var verts = buffer.getBuffer(layer);
-
-        vertex(mat, norm, light, verts, 0, 0, dz, 0, 0, 0, 0, -1, color);
-        vertex(mat, norm, light, verts, 0, dy, dz, 0, 1, 0, 0, -1, color);
-        vertex(mat, norm, light, verts, dx, dy, dz, 1, 1, 0, 0, -1, color);
-        vertex(mat, norm, light, verts, dx, 0, dz, 1, 0, 0, 0, -1, color);
+        for (int ra = 1;ra<16;ra+=2) {
+            float rx = (float) ((Math.sin((0)/8.)+(32./30.))/(2*(32./30.)));
+            float ry = (float) ((Math.cos((0)/8.)+(32./30.))/(2*(32./30.)));
+            vertex(mat, norm, light, verts, rx, ry, dz, rx, ry, 0, 0, -1, color);
+            rx = (float) ((Math.sin((ra*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            ry = (float) ((Math.cos((ra*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            vertex(mat, norm, light, verts, rx, ry, dz, rx, ry, 0, 0, -1, color);
+            rx = (float) ((Math.sin(((ra+1)*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            ry = (float) ((Math.cos(((ra+1)*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            vertex(mat, norm, light, verts, rx, ry, dz, rx, ry, 0, 0, -1, color);
+            rx = (float) ((Math.sin(((ra+2)*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            ry = (float) ((Math.cos(((ra+2)*Math.PI)/8.)+(32./30.))/(2*(32./30.)));
+            vertex(mat, norm, light, verts, rx, ry, dz, rx, ry, 0, 0, -1, color);
+        }
 
         boolean dorenderface = true;
         ResourceLocation renderface = face_emotion_normal;
@@ -140,21 +162,46 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                 int iotas = CountIotas(be.getIotaTag().get(HexIotaTypes.KEY_DATA));
                 if (iotas == 0) {
                     renderface = face_emotion_huh;
-                } else if (iotas <= 10) {
+                } else if (iotas <= 8) {
                     renderface = face_emotion_normal;
-                } else if (iotas <= 20) {
+                } else if (iotas <= 16) {
                     renderface = face_emotion_huh;
-                } else {
+                } else if (iotas <= 52) {
                     renderface = face_emotion_sad;
+                } else if (iotas <= 112) {
+                    renderface = face_emotion_pain;
+                } else {
+                    renderface = face_emotion_braindead;
                 }
             } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.PATTERN) {
                 dorenderface = false;
                 WorldlyPatternRenderHelpers.renderPattern(HexPattern.fromNBT(be.getIotaTag().getCompound(HexIotaTypes.KEY_DATA)), WorldlyPatternRenderHelpers.WORLDLY_SETTINGS, PatternColors.DEFAULT_PATTERN_COLOR,
-                        be.getBlockPos().hashCode(), poseStack, buffer, new Vec3(0, 0, -1), (15f/16f)-(1f/256f), light, 1);
+                        be.getBlockPos().hashCode(), poseStack, buffer, new Vec3(0, 0, -1), (15f / 16f) - (1f / 256f), light, 1);
             } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.GARBAGE) {
                 renderface = face_emotion_dumb;
             } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.NULL) {
                 renderface = face_emotion_huh;
+            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.DOUBLE) {
+                if (Double.isNaN(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA))) { //shouldn't happen, but if somehow happens
+                    renderface = face_emotion_dumb;
+                } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.POSITIVE_INFINITY) { //shouldn't happen, but if somehow happens
+                    renderface = face_emotion_dumb;
+                } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.NEGATIVE_INFINITY) { //shouldn't happen, but if somehow happens
+                    renderface = face_emotion_dumb;
+                } else {
+                    int iotas = numComplexity(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA));
+                    if (iotas <= 6) {
+                        renderface = face_emotion_normal;
+                    } else if (iotas <= 8) {
+                        renderface = face_emotion_huh;
+                    } else if (iotas <= 10) {
+                        renderface = face_emotion_sad;
+                    } else if (iotas <= 12) {
+                        renderface = face_emotion_pain;
+                    } else {
+                        renderface = face_emotion_braindead;
+                    }
+                }
             }
         }
         if (dorenderface) {
