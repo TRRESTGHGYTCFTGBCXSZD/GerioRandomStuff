@@ -68,8 +68,8 @@
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.2.header": "Exponent, D. Points, Negative",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.2": "That's the advanced digits works. If I write the number where it couldn't represent, nature will be angry. Too big and it will mishap too.",
 	
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.title": "Super Slate",
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.1": "It's like a slate, but it can literally hold anything casted from staff, but it kind of ignores mishaps. Why? I don't know, but at least we don't even need a Athena's Gambit.",
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.crafting.desc": "Bro, Why is so expensive to make!?",
+	"gui.geriorandomstuff.geriobook.hex.super_slate.title": "Super Slate",
+	"gui.geriorandomstuff.geriobook.hex.super_slate.1": "It's like a slate, but it can literally hold anything casted from staff, but it kind of ignores mishaps. Why? I don't know, but at least we don't even need a Athena's Gambit. Unlike pedestals, these always tries to execute the iota, even if the iota can't be executed.",
+	"gui.geriorandomstuff.geriobook.hex.super_slate.crafting.desc": "Bro, Why is so expensive to make!?",
 	"gerio.endofline": "end of line"
 }

@@ -4,7 +4,6 @@ package geriosb.randomstuff.common.blocks.cheaters;
 
 import at.petrak.hexcasting.annotations.SoftImplement;
 import at.petrak.hexcasting.api.block.circle.BlockCircleComponent;
-import at.petrak.hexcasting.api.casting.eval.ExecutionClientView;
 import at.petrak.hexcasting.api.casting.eval.env.CircleCastEnv;
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage;
 import at.petrak.hexcasting.api.casting.eval.vm.CastingVM;
@@ -98,20 +97,14 @@ public class SuperSlateBlock extends BlockCircleComponent implements EntityBlock
 
         if (pattern == null)
             return new ControlFlow.Continue(imageIn, exitDirs.toList());
-        if (imageIn.getParenCount() > 0 || imageIn.getEscapeNext() || pattern instanceof PatternIota) {
-            var vm = new CastingVM(imageIn, env);
+        var vm = new CastingVM(imageIn, env);
 
-            var result = vm.queueExecuteAndWrapIota(pattern, world);
-            //if (result.getResolutionType().getSuccess()) { // bypass mishaps
-                return new ControlFlow.Continue(vm.getImage(), exitDirs.toList());
-            //} else {
-                //return new ControlFlow.Stop();
-            //}
-        } else {
-            CastingImage newimage = imageIn.copy(imageIn.getStack(),imageIn.getParenCount(),imageIn.getParenthesized(),imageIn.getEscapeNext(),imageIn.getOpsConsumed(),imageIn.getUserData());
-            newimage.getStack().add(pattern);
-            return new ControlFlow.Continue(newimage, exitDirs.toList());
-        }
+        var result = vm.queueExecuteAndWrapIota(pattern, world);
+        //if (result.getResolutionType().getSuccess()) {
+            return new ControlFlow.Continue(vm.getImage(), exitDirs.toList());
+        //} else {
+            //return new ControlFlow.Stop();
+        //}
     }
 
     @Override
