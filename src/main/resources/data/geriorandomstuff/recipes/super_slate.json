@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "H H",
+    "SDS",
+    "SSS"
+  ],
+  "key": {
+    "H": {
+      "tag": "forge:nuggets/steel"
+    },
+    "D": {
+      "item": "hexcasting:quenched_allay"
+    },
+    "S": {
+      "item": "hexcasting:slate"
+    }
+  },
+  "result": {
+    "item": "geriorandomstuff:super_slate",
+    "count": 5
+  }
+}

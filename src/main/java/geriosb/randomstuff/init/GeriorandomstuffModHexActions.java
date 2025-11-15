@@ -29,7 +29,7 @@ public class GeriorandomstuffModHexActions { //seriously? kotlin!?
     // EAST aqawq (E)
     // EAST (-.)
 	public static final DeferredRegister<ActionRegistryEntry> REGISTRY = DeferredRegister.create(HexRegistries.ACTION, GeriorandomstuffMod.MODID);
-	public static final RegistryObject<ActionRegistryEntry> NUMBER_FORMATTER = REGISTRY.register("number_formatter",
+        public static final RegistryObject<ActionRegistryEntry> NUMBER_FORMATTER = REGISTRY.register("number_formatter",
             () -> new ActionRegistryEntry(HexPattern.fromAngles("dqddeawawaawdwdadwwdwwd", HexDir.EAST), OpNumericCreator.INSTANCE));
     // WHY FORGE NO WAY WORK
 }

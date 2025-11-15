@@ -1,0 +1,18 @@
+{
+  "name": "gui.geriorandomstuff.geriobook.hex.super_slate.title",
+  "category": "hexcasting:items",
+  "icon": "hexcasting:slate",
+  "sortnum": 5,
+  "advancement": "hexcasting:root",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "gui.geriorandomstuff.geriobook.hex.super_slate.1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "geriorandomstuff:super_slate",
+      "text": "gui.geriorandomstuff.geriobook.hex.super_slate.crafting.desc"
+    }
+  ]
+}

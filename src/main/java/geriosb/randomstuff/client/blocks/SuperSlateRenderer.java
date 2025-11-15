@@ -1,10 +1,14 @@
 package geriosb.randomstuff.client.blocks;
 
 import at.petrak.hexcasting.api.casting.iota.*;
+import at.petrak.hexcasting.api.casting.math.HexPattern;
+import at.petrak.hexcasting.api.utils.HexUtils;
 import at.petrak.hexcasting.client.render.PatternColors;
 import at.petrak.hexcasting.client.render.WorldlyPatternRenderHelpers;
 import at.petrak.hexcasting.common.blocks.circles.BlockSlate;
+import at.petrak.hexcasting.common.lib.hex.HexIotaTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import geriosb.randomstuff.GeriorandomstuffMod;
 import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlock;
@@ -16,14 +20,21 @@ import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.client.renderer.blockentity.PistonHeadRenderer;
+import org.joml.Matrix3f;
+import org.joml.Matrix4f;
 
 import java.util.Objects;
 
@@ -32,30 +43,43 @@ import static geriosb.randomstuff.utils.ColorUtils.TweenColor;
 
 public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEntity> {
     private final BlockRenderDispatcher blockRenderer;
-    private static final ResourceLocation base = rl("block/super_slate_base");
-    private static final ResourceLocation face_screen_unassigned = rl("block/super_slate_face");
-    private static final ResourceLocation face_screen_assigned = rl("block/super_slate_face_color");
-    private static final ResourceLocation face_emotion_normal = rl("block/super_slate_face_normal");
-    private static final ResourceLocation face_emotion_huh = rl("block/super_slate_face_huh");
-    private static final ResourceLocation face_emotion_dumb = rl("block/super_slate_face_dumb");
-    private static final ResourceLocation face_emotion_sad = rl("block/super_slate_face_sad");
+    private static final ResourceLocation base = rl("textures/block/tric_side.png");
+    private static final ResourceLocation face_screen_unassigned = rl("textures/block/tric/face.png");
+    private static final ResourceLocation face_screen_assigned = rl("textures/block/tric/face_color.png");
+    private static final ResourceLocation face_emotion_normal = rl("textures/block/tric/normal.png");
+    private static final ResourceLocation face_emotion_huh = rl("textures/block/tric/huh.png");
+    private static final ResourceLocation face_emotion_dumb = rl("textures/block/tric/dumb.png");
+    private static final ResourceLocation face_emotion_sad = rl("textures/block/tric/sad.png");
 
     public SuperSlateRenderer(BlockEntityRendererProvider.Context ctx) {
         this.blockRenderer = ctx.getBlockRenderDispatcher();
     }
-    private static final int[] WALL_ROTATIONS = {0,90,180,270};
-    private static int CountIotas(ListIota scaniota) { // recursive function to count iotas
-        if (scaniota.subIotas() == null) return 0; // empty lists count as 0
-        if (!scaniota.getList().getNonEmpty()) return 0;
-        int count = 0;
-        for (Iota iota : Objects.requireNonNull(scaniota.subIotas())){
-            if (iota instanceof ListIota nextscaniota){
-                count += CountIotas(nextscaniota)+1;
-            } else {
-                count += 1;
+    private static final int[] WALL_ROTATIONS = {180,90,0,270};
+
+    public static int CountIotas(Tag tag) {
+        try {
+            var listTag = HexUtils.downcast(tag, ListTag.TYPE);
+            var out = 0;
+
+            for (var sub : listTag) {
+                var csub = HexUtils.downcast(sub, CompoundTag.TYPE);
+                out += CountIotas(csub.get(HexIotaTypes.KEY_DATA)) + 1;
             }
+
+            return out;
+        } catch (IllegalArgumentException t) {
+            return 0;
         }
-        return count;
+    }
+
+    private static void vertex(Matrix4f mat, Matrix3f normal, int light, VertexConsumer verts, float x, float y,
+                               float z, float u,
+                               float v, float nx, float ny, float nz, int colorer) {
+        verts.vertex(mat, x, y, z)
+                .color(colorer)
+                .uv(u, v).overlayCoords(OverlayTexture.NO_OVERLAY).uv2(light)
+                .normal(normal, nx, ny, nz)
+                .endVertex();
     }
 
     @Override
@@ -67,23 +91,27 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
         BlockState bs = be.getBlockState();
         poseStack.pushPose();
         int facing = bs.getValue(SuperSlateBlock.FACING).get2DDataValue();
+        poseStack.translate(0.5f,0.5f,0.5f);
         poseStack.mulPose(Axis.YP.rotationDegrees(WALL_ROTATIONS[facing % 4]));
         if (bs.getValue(SuperSlateBlock.ATTACH_FACE) == AttachFace.CEILING) {
             poseStack.mulPose(Axis.XP.rotationDegrees(-90));
-        } else if (bs.getValue(SuperSlateBlock.ATTACH_FACE) == AttachFace.CEILING) {
+            poseStack.mulPose(Axis.ZP.rotationDegrees(180));
+        } else if (bs.getValue(SuperSlateBlock.ATTACH_FACE) == AttachFace.FLOOR) {
             poseStack.mulPose(Axis.XP.rotationDegrees(90));
+            poseStack.mulPose(Axis.ZP.rotationDegrees(180));
+        } else {
+            poseStack.mulPose(Axis.ZP.rotationDegrees(180));
         }
         int color = 0xff222222;
-        if ((!(be.getIotaTag() == null)) && be.getLevel() instanceof ServerLevel warudo) {
-            Iota deserial = IotaType.deserialize(be.getIotaTag(), warudo);
-            if (deserial instanceof BooleanIota boolvalue) {
-                if (boolvalue.getBool()) {
+        if (be.getIotaTag() != null) {
+            if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.BOOLEAN) {
+                if (be.getIotaTag().getBoolean(HexIotaTypes.KEY_DATA)) {
                     color = 0xff00AA00;
                 } else {
                     color = 0xffAA0000;
                 }
             } else {
-                color = deserial.getType().color();
+                color = Objects.requireNonNull(IotaType.getTypeFromTag(be.getIotaTag())).color();
             }
         }
         if (bs.getValue(SuperSlateBlock.ENERGIZED)) {
@@ -91,95 +119,52 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
             double value = (Math.sin(angle)+1)/2;
             color = TweenColor(color,0xffffffff,value);
         }
+        poseStack.translate(-0.5f,-0.5f,-0.5f);
+        float dx = 1f, dy = 1f, dz = 15f / 16f;
+        var last = poseStack.last();
+        var mat = last.pose();
+        var norm = last.normal();
+        RenderType layer = RenderType.entityCutout(face_screen_assigned);
 
-        blockRenderer.getModelRenderer().renderModel(
-                poseStack.last(),           // BlockState to render
-                buffer.getBuffer(RenderType.solid()),
-                null,
-                modelManager.getModel(new ModelResourceLocation(base,"")),
-                255,
-                255,
-                255,
-                light,
-                overlay
-        );
+        var verts = buffer.getBuffer(layer);
 
-        blockRenderer.getModelRenderer().renderModel(
-                poseStack.last(),           // BlockState to render
-                buffer.getBuffer(RenderType.solid()),
-                null,
-                modelManager.getModel(new ModelResourceLocation(face_screen_assigned,"")),
-                (color & 0xff0000) >> 16,
-                (color & 0xff00) >> 8,
-                color & 0xff,
-                light,
-                overlay
-        );
-        poseStack.translate(0,0,1./256);
-        if (be.getLevel() instanceof ServerLevel warudo) {
-            if (IotaType.deserialize(be.getIotaTag(), warudo) instanceof ListIota lister) {
-                int iotas = CountIotas(lister);
-                BakedModel renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
+        vertex(mat, norm, light, verts, 0, 0, dz, 0, 0, 0, 0, -1, color);
+        vertex(mat, norm, light, verts, 0, dy, dz, 0, 1, 0, 0, -1, color);
+        vertex(mat, norm, light, verts, dx, dy, dz, 1, 1, 0, 0, -1, color);
+        vertex(mat, norm, light, verts, dx, 0, dz, 1, 0, 0, 0, -1, color);
+
+        boolean dorenderface = true;
+        ResourceLocation renderface = face_emotion_normal;
+        if (be.getIotaTag() != null) {
+            if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.LIST) {
+                int iotas = CountIotas(be.getIotaTag().get(HexIotaTypes.KEY_DATA));
                 if (iotas == 0) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
+                    renderface = face_emotion_huh;
                 } else if (iotas <= 10) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_normal,""));
+                    renderface = face_emotion_normal;
                 } else if (iotas <= 20) {
-                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_huh,""));
+                    renderface = face_emotion_huh;
                 } else {
-                    renderface = modelManager.getModel(new ModelResourceLocation(face_emotion_sad,""));
+                    renderface = face_emotion_sad;
                 }
-                blockRenderer.getModelRenderer().renderModel(
-                        poseStack.last(),           // BlockState to render
-                        buffer.getBuffer(RenderType.solid()),
-                        null,
-                        renderface,
-                        255,
-                        255,
-                        255,
-                        light,
-                        overlay
-                );
-            } else if (IotaType.deserialize(be.getIotaTag(), warudo) instanceof PatternIota reface) {
-                WorldlyPatternRenderHelpers.renderPattern(reface.getPattern(), WorldlyPatternRenderHelpers.WORLDLY_SETTINGS, PatternColors.DEFAULT_PATTERN_COLOR,
-                        be.getBlockPos().hashCode(),poseStack,buffer,new Vec3(0, 0, -1),null,light,1);
-            } else if (IotaType.deserialize(be.getIotaTag(), warudo) instanceof GarbageIota) {
-                blockRenderer.getModelRenderer().renderModel(
-                        poseStack.last(),           // BlockState to render
-                        buffer.getBuffer(RenderType.solid()),
-                        null,
-                        modelManager.getModel(new ModelResourceLocation(face_emotion_dumb,"")),
-                        255,
-                        255,
-                        255,
-                        light,
-                        overlay
-                );
-            } else if (IotaType.deserialize(be.getIotaTag(), warudo) instanceof NullIota) {
-                blockRenderer.getModelRenderer().renderModel(
-                        poseStack.last(),           // BlockState to render
-                        buffer.getBuffer(RenderType.solid()),
-                        null,
-                        modelManager.getModel(new ModelResourceLocation(face_emotion_huh,"")),
-                        255,
-                        255,
-                        255,
-                        light,
-                        overlay
-                );
-            } else {
-                blockRenderer.getModelRenderer().renderModel(
-                        poseStack.last(),           // BlockState to render
-                        buffer.getBuffer(RenderType.solid()),
-                        null,
-                        modelManager.getModel(new ModelResourceLocation(face_emotion_normal,"")),
-                        255,
-                        255,
-                        255,
-                        light,
-                        overlay
-                );
+            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.PATTERN) {
+                dorenderface = false;
+                WorldlyPatternRenderHelpers.renderPattern(HexPattern.fromNBT(be.getIotaTag().getCompound(HexIotaTypes.KEY_DATA)), WorldlyPatternRenderHelpers.WORLDLY_SETTINGS, PatternColors.DEFAULT_PATTERN_COLOR,
+                        be.getBlockPos().hashCode(), poseStack, buffer, new Vec3(0, 0, -1), (15f/16f)-(1f/256f), light, 1);
+            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.GARBAGE) {
+                renderface = face_emotion_dumb;
+            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.NULL) {
+                renderface = face_emotion_huh;
             }
+        }
+        if (dorenderface) {
+            layer = RenderType.entityTranslucent(renderface);
+
+            verts = buffer.getBuffer(layer);
+            vertex(mat, norm, light, verts, 0, 0, dz-(1f/256f), 0, 0, 0, 0, -1, 0xffffffff);
+            vertex(mat, norm, light, verts, 0, dy, dz-(1f/256f), 0, 1, 0, 0, -1, 0xffffffff);
+            vertex(mat, norm, light, verts, dx, dy, dz-(1f/256f), 1, 1, 0, 0, -1, 0xffffffff);
+            vertex(mat, norm, light, verts, dx, 0, dz-(1f/256f), 1, 0, 0, 0, -1, 0xffffffff);
         }
 
         poseStack.popPose();
