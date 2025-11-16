@@ -59,6 +59,11 @@
 	"hexcasting.mishap.geriorandomstuff.decimalexponents": "Cannot use decimal exponents",
 	
 	"hexcasting.action.geriorandomstuff:number_formatter": "Archaeologist's Purification",
+    "hexcasting.action.geriorandomstuff:color_constructor_nonopaque": "Chromatic Exhalation",
+    "hexcasting.action.geriorandomstuff:color_deconstructor_nonopaque": "Chromatic Disintegration",
+  "hexcasting.action.geriorandomstuff:color_constructor": "Chromatic Exhalation II",
+  "hexcasting.action.geriorandomstuff:color_deconstructor": "Chromatic Disintegration II",
+    "hexcasting.action.geriorandomstuff:color_transparency_stripper": "Opaque Purification",
 	
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.title": "Archaeologist's Purification",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.0": "What's that? It seems that we could write readable numbers, but why is the spell not known into the world? Anyways, it seems we could write the numbers more easily, but no one dared to write numbers that way, even legends. It is unknown this spell has it's name, so Let's call it \"Archaeologist's Purification\" for now.",

@@ -53,7 +53,8 @@ public class GeriorandomstuffMod {
             GeriorandomstuffModBlocks.HEXREGISTRY.register(bus);
             GeriorandomstuffModBlockEntities.HEXREGISTRY.register(bus);
             GeriorandomstuffModItems.HEXREGISTRY.register(bus);
-            GeriorandomstuffModHexActions.REGISTRY.register(bus);
+            GeriorandomstuffModHexActions.ACTIONS.register(bus);
+            GeriorandomstuffModHexActions.IOTAS.register(bus);
         }
 		
 		

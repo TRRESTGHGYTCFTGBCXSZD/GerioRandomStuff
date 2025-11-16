@@ -13,6 +13,7 @@ import com.mojang.math.Axis;
 import geriosb.randomstuff.GeriorandomstuffMod;
 import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlock;
 import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlockEntity;
+import geriosb.randomstuff.init.GeriorandomstuffModHexActions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -52,6 +53,7 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
     private static final ResourceLocation face_emotion_sad = rl("textures/block/tric/sad.png");
     private static final ResourceLocation face_emotion_pain = rl("textures/block/tric/critical.png");
     private static final ResourceLocation face_emotion_braindead = rl("textures/block/tric/mindless.png");
+    private static final ResourceLocation face_emotion_minty = rl("textures/block/tric/gerio.png");
 
     public SuperSlateRenderer(BlockEntityRendererProvider.Context ctx) {
         this.blockRenderer = ctx.getBlockRenderDispatcher();
@@ -123,12 +125,15 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
                 } else {
                     color = 0xffAA0000;
                 }
+            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == GeriorandomstuffModHexActions.COLOR_IOTA.get()) {
+                color = be.getIotaTag().getInt(HexIotaTypes.KEY_DATA);
             } else {
                 color = Objects.requireNonNull(IotaType.getTypeFromTag(be.getIotaTag())).color();
             }
         }
+        int origincolor = color;
         if (bs.getValue(SuperSlateBlock.ENERGIZED)) {
-            double angle = (System.currentTimeMillis() % 1_000_000L) / 250. * Math.PI;
+            double angle = (System.currentTimeMillis() % 500L) / 250. * Math.PI;
             double value = (Math.sin(angle)+1)/2;
             color = TweenColor(color,0xffffffff,value);
         }
@@ -157,49 +162,53 @@ public class SuperSlateRenderer implements BlockEntityRenderer<SuperSlateBlockEn
 
         boolean dorenderface = true;
         ResourceLocation renderface = face_emotion_normal;
-        if (be.getIotaTag() != null) {
-            if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.LIST) {
-                int iotas = CountIotas(be.getIotaTag().get(HexIotaTypes.KEY_DATA));
-                if (iotas == 0) {
-                    renderface = face_emotion_huh;
-                } else if (iotas <= 8) {
-                    renderface = face_emotion_normal;
-                } else if (iotas <= 16) {
-                    renderface = face_emotion_huh;
-                } else if (iotas <= 52) {
-                    renderface = face_emotion_sad;
-                } else if (iotas <= 112) {
-                    renderface = face_emotion_pain;
-                } else {
-                    renderface = face_emotion_braindead;
-                }
-            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.PATTERN) {
-                dorenderface = false;
-                WorldlyPatternRenderHelpers.renderPattern(HexPattern.fromNBT(be.getIotaTag().getCompound(HexIotaTypes.KEY_DATA)), WorldlyPatternRenderHelpers.WORLDLY_SETTINGS, PatternColors.DEFAULT_PATTERN_COLOR,
-                        be.getBlockPos().hashCode(), poseStack, buffer, new Vec3(0, 0, -1), (15f / 16f) - (1f / 256f), light, 1);
-            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.GARBAGE) {
-                renderface = face_emotion_dumb;
-            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.NULL) {
-                renderface = face_emotion_huh;
-            } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.DOUBLE) {
-                if (Double.isNaN(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA))) { //shouldn't happen, but if somehow happens
-                    renderface = face_emotion_dumb;
-                } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.POSITIVE_INFINITY) { //shouldn't happen, but if somehow happens
-                    renderface = face_emotion_dumb;
-                } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.NEGATIVE_INFINITY) { //shouldn't happen, but if somehow happens
-                    renderface = face_emotion_dumb;
-                } else {
-                    int iotas = numComplexity(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA));
-                    if (iotas <= 6) {
-                        renderface = face_emotion_normal;
-                    } else if (iotas <= 8) {
+        if ((origincolor & 0xffffff) == 0xA2DBD4) {
+            renderface = face_emotion_minty; //easter egg;
+        } else {
+            if (be.getIotaTag() != null) {
+                if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.LIST) {
+                    int iotas = CountIotas(be.getIotaTag().get(HexIotaTypes.KEY_DATA));
+                    if (iotas == 0) {
                         renderface = face_emotion_huh;
-                    } else if (iotas <= 10) {
+                    } else if (iotas <= 8) {
+                        renderface = face_emotion_normal;
+                    } else if (iotas <= 16) {
+                        renderface = face_emotion_huh;
+                    } else if (iotas <= 52) {
                         renderface = face_emotion_sad;
-                    } else if (iotas <= 12) {
+                    } else if (iotas <= 112) {
                         renderface = face_emotion_pain;
                     } else {
                         renderface = face_emotion_braindead;
+                    }
+                } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.PATTERN) {
+                    dorenderface = false;
+                    WorldlyPatternRenderHelpers.renderPattern(HexPattern.fromNBT(be.getIotaTag().getCompound(HexIotaTypes.KEY_DATA)), WorldlyPatternRenderHelpers.WORLDLY_SETTINGS, PatternColors.DEFAULT_PATTERN_COLOR,
+                            be.getBlockPos().hashCode(), poseStack, buffer, new Vec3(0, 0, -1), (15f / 16f) - (1f / 256f), light, 1);
+                } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.GARBAGE) {
+                    renderface = face_emotion_dumb;
+                } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.NULL) {
+                    renderface = face_emotion_huh;
+                } else if (IotaType.getTypeFromTag(be.getIotaTag()) == HexIotaTypes.DOUBLE) {
+                    if (Double.isNaN(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA))) { //shouldn't happen, but if somehow happens
+                        renderface = face_emotion_dumb;
+                    } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.POSITIVE_INFINITY) { //shouldn't happen, but if somehow happens
+                        renderface = face_emotion_dumb;
+                    } else if (be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA) == Double.NEGATIVE_INFINITY) { //shouldn't happen, but if somehow happens
+                        renderface = face_emotion_dumb;
+                    } else {
+                        int iotas = numComplexity(be.getIotaTag().getDouble(HexIotaTypes.KEY_DATA));
+                        if (iotas <= 6) {
+                            renderface = face_emotion_normal;
+                        } else if (iotas <= 8) {
+                            renderface = face_emotion_huh;
+                        } else if (iotas <= 10) {
+                            renderface = face_emotion_sad;
+                        } else if (iotas <= 12) {
+                            renderface = face_emotion_pain;
+                        } else {
+                            renderface = face_emotion_braindead;
+                        }
                     }
                 }
             }
