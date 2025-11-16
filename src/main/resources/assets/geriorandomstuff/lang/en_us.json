@@ -61,12 +61,14 @@
 	"hexcasting.action.geriorandomstuff:number_formatter": "Archaeologist's Purification",
     "hexcasting.action.geriorandomstuff:color_constructor_nonopaque": "Chromatic Exhalation",
     "hexcasting.action.geriorandomstuff:color_deconstructor_nonopaque": "Chromatic Disintegration",
-  "hexcasting.action.geriorandomstuff:color_constructor": "Chromatic Exhalation II",
-  "hexcasting.action.geriorandomstuff:color_deconstructor": "Chromatic Disintegration II",
+    "hexcasting.action.geriorandomstuff:color_constructor": "Chromatic Exhalation II",
+    "hexcasting.action.geriorandomstuff:color_deconstructor": "Chromatic Disintegration II",
     "hexcasting.action.geriorandomstuff:color_transparency_stripper": "Opaque Purification",
+    "hexcasting.action.geriorandomstuff:hyper_read": "Greater Scribe's Reflection",
+    "hexcasting.action.geriorandomstuff:continuation_decoder": "Iris' Purification",
 	
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.title": "Archaeologist's Purification",
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.0": "What's that? It seems that we could write readable numbers, but why is the spell not known into the world? Anyways, it seems we could write the numbers more easily, but no one dared to write numbers that way, even legends. It is unknown this spell has it's name, so Let's call it \"Archaeologist's Purification\" for now.",
+	"gui.geriorandomstuff.geriobook.hex.numericformatter.title": "Archaeologist's Prfn.",
+	"gui.geriorandomstuff.geriobook.hex.numericformatter.0": "What's that? It seems that we could write readable numbers, but why is the spell not known into the world? Anyways, it seems we could write the numbers more easily, but almost no one dared to write numbers that way, even legends. It is unknown this spell has it's name, so Let's call it \"Archaeologist's Purification\" for now.",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.summary": "It converts the desiginated digit patterns into number, but the numbers can't be rotated in any way. Why? It seems it will break readability.",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.1.header": "Digits",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.1": "This is where the digits should write. Why? It's pretty unknown, but for some reason it's very restrictive like china's writing system works.",
@@ -76,5 +78,9 @@
 	"gui.geriorandomstuff.geriobook.hex.super_slate.title": "Super Slate",
 	"gui.geriorandomstuff.geriobook.hex.super_slate.1": "It's like a slate, but it can literally hold anything casted from staff, but it kind of ignores mishaps. Why? I don't know, but at least we don't even need a Athena's Gambit. Unlike pedestals, these always tries to execute the iota, even if the iota can't be executed.",
 	"gui.geriorandomstuff.geriobook.hex.super_slate.crafting.desc": "Bro, Why is so expensive to make!?",
+
+    "gui.geriorandomstuff.geriobook.hex.hyper_read.title": "Deobfuscating Iotas",
+	"gui.geriorandomstuff.geriobook.hex.hyper_read.summary": "This one reads Cypher/Trinket/Artifact's Spell, Why I couldn't cast a greater spell just to read contents? For some reason, This can't be used on Focis, Slates, or anything, just this.",
+	"gui.geriorandomstuff.geriobook.hex.continuation_decoder.summary": "This one reads Jump Iota, Why I couldn't cast a spell just to read contents?",
 	"gerio.endofline": "end of line"
 }

@@ -1,0 +1,26 @@
+{
+	"name": "gui.geriorandomstuff.geriobook.hex.hyper_read.title",
+	"icon": "hexcasting:akashic_bookshelf",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:enlightenment",
+	"entry_color": "54398a",
+	"sortnum": 13,
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "geriorandomstuff:hyper_read",
+			"anchor": "geriorandomstuff:hyper_read",
+			"input": "",
+			"output": "list of patterns",
+			"text": "gui.geriorandomstuff.geriobook.hex.hyper_read.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "geriorandomstuff:continuation_decoder",
+			"anchor": "geriorandomstuff:continuation_decoder",
+			"input": "jump",
+			"output": "many",
+			"text": "gui.geriorandomstuff.geriobook.hex.continuation_decoder.summary"
+		}
+	]
+}

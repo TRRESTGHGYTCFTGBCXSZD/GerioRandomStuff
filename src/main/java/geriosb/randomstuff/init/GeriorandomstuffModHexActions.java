@@ -9,10 +9,10 @@ import at.petrak.hexcasting.api.casting.iota.IotaType;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.common.lib.HexRegistries;
-import geriosb.randomstuff.hexactions.ColorIota;
+import geriosb.randomstuff.hexactions.*;
 import geriosb.randomstuff.hexactions.OpColorConstructor;
 import geriosb.randomstuff.hexactions.OpColorDeconstructor;
-import geriosb.randomstuff.hexactions.OpNumericCreator;
+import geriosb.randomstuff.hexactions.OpColorTransparencyStripper;
 import geriosb.randomstuff.hexactions.colors.OpColorConstructorNoTrans;
 import geriosb.randomstuff.hexactions.colors.OpColorDeconstructorNoTrans;
 import net.minecraftforge.registries.RegistryObject;
@@ -45,6 +45,12 @@ public class GeriorandomstuffModHexActions { //seriously? kotlin!?
             () -> new ActionRegistryEntry(HexPattern.fromAngles("eeeweweeeweweeewe", HexDir.WEST), OpColorDeconstructorNoTrans.INSTANCE));
     public static final RegistryObject<ActionRegistryEntry> COLOR_DECONSTRUCTOR = ACTIONS.register("color_deconstructor",
             () -> new ActionRegistryEntry(HexPattern.fromAngles("eeewdaeeeewdaeeeewda", HexDir.WEST), OpColorDeconstructor.INSTANCE));
+    public static final RegistryObject<ActionRegistryEntry> COLOR_TRANSPARENCY_STRIPPER = ACTIONS.register("color_transparency_stripper",
+            () -> new ActionRegistryEntry(HexPattern.fromAngles("dqaawadeee", HexDir.WEST), OpColorTransparencyStripper.INSTANCE));
+    public static final RegistryObject<ActionRegistryEntry> HYPER_READ = ACTIONS.register("hyper_read",
+            () -> new ActionRegistryEntry(HexPattern.fromAngles("aqqqqqeawqwqwqwqwqw", HexDir.EAST), OpHyperRead.INSTANCE));
+    public static final RegistryObject<ActionRegistryEntry> CONTINUATION_DECODER = ACTIONS.register("continuation_decoder",
+            () -> new ActionRegistryEntry(HexPattern.fromAngles("ewdeaq", HexDir.NORTH_EAST), OpContinuationDecoder.INSTANCE));
     public static final DeferredRegister<IotaType<?>> IOTAS = DeferredRegister.create(HexRegistries.IOTA_TYPE, GeriorandomstuffMod.MODID);
     public static final RegistryObject<IotaType<ColorIota>> COLOR_IOTA = IOTAS.register("color", () -> ColorIota.TYPE);
     // WHY FORGE NO WAY WORK
