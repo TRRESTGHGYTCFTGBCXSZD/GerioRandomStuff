@@ -89,6 +89,9 @@ repositories {
             includeGroup "dev.architectury"
         }
     }
+    maven {
+        url = uri("https://maven.hexxy.media")
+    }
     mavenCentral()
 } // SHIVER ME TIMBERS
 
@@ -108,6 +111,7 @@ dependencies {
 	implementation fg.deobf("maven.modrinth:jade:11.13.2+forge")
 	implementation ("at.petra-k.hexcasting:hexcasting-forge-1.20.1:0.11.2-pre-750")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation fg.deobf("ram.talia.hexal:hexal-forge-1.20.1:0.3.1")
 }
 
 tasks.withType(JavaCompile).configureEach {

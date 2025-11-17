@@ -40,6 +40,9 @@ public class GeriorandomstuffModBlockEntities {
 	public static final RegistryObject<BlockEntityType<SuperSlateBlockEntity>> SUPER_SLATE = hexregister("super_slate", GeriorandomstuffModBlocks.SUPER_SLATE, SuperSlateBlockEntity::new);
     public static final RegistryObject<BlockEntityType<RemoteSlateBlockEntity>> REMOTE_SLATE = hexregister("remote_slate", GeriorandomstuffModBlocks.REMOTE_SLATE, RemoteSlateBlockEntity::new);
 
+    public static final DeferredRegister<BlockEntityType<?>> HEXALREGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GeriorandomstuffMod.MODID);
+    public static final RegistryObject<BlockEntityType<ExposedMoteBlockEntity>> EXPOSED_MOTE = hexalregister("exposed_mote", GeriorandomstuffModBlocks.EXPOSED_MOTE, ExposedMoteBlockEntity::new);
+
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(
             String registryname,
             RegistryObject<Block> block,
@@ -51,5 +54,11 @@ public class GeriorandomstuffModBlockEntities {
             RegistryObject<Block> block,
             BlockEntityType.BlockEntitySupplier<T> supplier
     ) {        return HEXREGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
+    }
+    private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> hexalregister(
+            String registryname,
+            RegistryObject<Block> block,
+            BlockEntityType.BlockEntitySupplier<T> supplier
+    ) {        return HEXALREGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
     }
 }

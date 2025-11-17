@@ -56,7 +56,8 @@
 	
 	"hexcasting.mishap.divide_by_zero.malform": "Attempted to create a malformed number",
 	"hexcasting.mishap.divide_by_zero.toolarge": "Attempted to create a number past it's maximum",
-	"hexcasting.mishap.geriorandomstuff.decimalexponents": "Cannot use decimal exponents",
+	"gui.geriorandomstuff.hex.decimalexponents": "Cannot use decimal exponents",
+	"gui.geriorandomstuff.hex.unsupportedcontinuation": "Cannot decode Jump Iota, Unsupported Type",
 	
 	"hexcasting.action.geriorandomstuff:number_formatter": "Archaeologist's Purification",
     "hexcasting.action.geriorandomstuff:color_constructor_nonopaque": "Chromatic Exhalation",
@@ -73,7 +74,7 @@
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.1.header": "Digits",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.1": "This is where the digits should write. Why? It's pretty unknown, but for some reason it's very restrictive like china's writing system works.",
 	"gui.geriorandomstuff.geriobook.hex.numericformatter.2.header": "Exponent, D. Points, Negative",
-	"gui.geriorandomstuff.geriobook.hex.numericformatter.2": "That's the advanced digits works. If I write the number where it couldn't represent, nature will be angry. Too big and it will mishap too.",
+	"gui.geriorandomstuff.geriobook.hex.numericformatter.2": "That's the advanced digits works. If I write the number where it couldn't represent, nature will be angry. Too big and it will mishap too. Subject to be Unsupported Action Mishap.",
 	
 	"gui.geriorandomstuff.geriobook.hex.super_slate.title": "Super Slate",
 	"gui.geriorandomstuff.geriobook.hex.super_slate.1": "It's like a slate, but it can literally hold anything casted from staff, but it kind of ignores mishaps. Why? I don't know, but at least we don't even need a Athena's Gambit. Unlike pedestals, these always tries to execute the iota, even if the iota can't be executed.",
@@ -81,6 +82,7 @@
 
     "gui.geriorandomstuff.geriobook.hex.hyper_read.title": "Deobfuscating Iotas",
 	"gui.geriorandomstuff.geriobook.hex.hyper_read.summary": "This one reads Cypher/Trinket/Artifact's Spell, Why I couldn't cast a greater spell just to read contents? For some reason, This can't be used on Focis, Slates, or anything, just this.",
-	"gui.geriorandomstuff.geriobook.hex.continuation_decoder.summary": "This one reads Jump Iota, Why I couldn't cast a spell just to read contents?",
+	"gui.geriorandomstuff.geriobook.hex.continuation_decoder.summary": "This one reads Jump Iota, Why I couldn't cast a spell just to read contents? It handles Iris' Jump iota into readable symbols. Subject to be Unsupported Action Mishap.",
+	"gui.geriorandomstuff.geriobook.hex.continuation_decoder.1": "Some extensions will add new types of Jump iota. If the one finds out that this is not possible to handle, it will mishap. Hermes' Gambit will return Iota lists, Thoth's Gambit will return The stack, Supplied Program, Iterators.",
 	"gerio.endofline": "end of line"
 }

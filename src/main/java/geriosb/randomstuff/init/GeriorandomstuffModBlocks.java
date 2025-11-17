@@ -4,6 +4,7 @@
  */
 package geriosb.randomstuff.init;
 
+import geriosb.randomstuff.common.blocks.cheaters.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,14 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.level.block.Block;
 
 import geriosb.randomstuff.common.blocks.recipeblock.YoncrusherBlock;
-import geriosb.randomstuff.common.blocks.cheaters.UnbreakableBlockBlock;
-import geriosb.randomstuff.common.blocks.cheaters.TelekinesisSetterBlock;
-import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlock;
-import geriosb.randomstuff.common.blocks.cheaters.SilkerBlock;
-import geriosb.randomstuff.common.blocks.cheaters.RemoteStorageBlock;
 import geriosb.randomstuff.common.blocks.PlasmaBlock;
-import geriosb.randomstuff.common.blocks.cheaters.MegaStorageBlock;
-import geriosb.randomstuff.common.blocks.cheaters.LiquidDuplicatorBlockBlock;
 import geriosb.randomstuff.common.blocks.pipes.InstantLiquidPipeBlock;
 import geriosb.randomstuff.common.blocks.pipes.InstantItemPipeBlock;
 import geriosb.randomstuff.common.blocks.pipes.InstantGasPipeBlock;
@@ -26,7 +20,6 @@ import geriosb.randomstuff.common.blocks.GussunheadBlock;
 import geriosb.randomstuff.common.blocks.GerioBlockBlock;
 import geriosb.randomstuff.common.blocks.DuplicatorBlock;
 import geriosb.randomstuff.common.blocks.DebugSteelBlockBlock;
-import geriosb.randomstuff.common.blocks.cheaters.CongealedDuplicatorBlock;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -55,5 +48,8 @@ public class GeriorandomstuffModBlocks {
     public static final DeferredRegister<Block> HEXREGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, GeriorandomstuffMod.MODID);
 	public static final RegistryObject<Block> SUPER_SLATE = HEXREGISTRY.register("super_slate", () -> new SuperSlateBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES).strength(4f, 4f).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> REMOTE_SLATE = HEXREGISTRY.register("remote_slate", RemoteStorageBlock::new);
+
+    public static final DeferredRegister<Block> HEXALREGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, GeriorandomstuffMod.MODID);
+    public static final RegistryObject<Block> EXPOSED_MOTE = HEXALREGISTRY.register("exposed_mote", ExposedMoteBlock::new);
 
 }

@@ -4,10 +4,7 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction;
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment;
 import at.petrak.hexcasting.api.casting.eval.OperationResult;
 import at.petrak.hexcasting.api.casting.eval.sideeffects.OperatorSideEffect;
-import at.petrak.hexcasting.api.casting.eval.vm.CastingImage;
-import at.petrak.hexcasting.api.casting.eval.vm.FrameEvaluate;
-import at.petrak.hexcasting.api.casting.eval.vm.FrameForEach;
-import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation;
+import at.petrak.hexcasting.api.casting.eval.vm.*;
 import at.petrak.hexcasting.api.casting.iota.*;
 import at.petrak.hexcasting.api.casting.math.HexDir;
 import at.petrak.hexcasting.api.casting.math.HexPattern;
@@ -51,10 +48,16 @@ public final class OpContinuationDecoder implements ConstMediaAction { //why kot
                     FUCK.add(new ListIota(re.getList()));
                 } else if (da instanceof FrameForEach re) {
                     List<Iota> stanky = new ArrayList<Iota>(3);
-                    if (re.getBaseStack() != null) stanky.add(new ListIota(re.getBaseStack()));
-                    stanky.add(new ListIota(re.getData()));
+                    if (re.getBaseStack() != null) {
+                        stanky.addAll(re.getBaseStack());
+                    }
                     stanky.add(new ListIota(re.getCode()));
+                    stanky.add(new ListIota(re.getData()));
                     FUCK.add(new ListIota(stanky));
+                } else if (da instanceof FrameFinishEval re) {
+                    // safety, to prevent accidental mishaps
+                } else {
+                    throw new MishapUnsupportedAction(Component.translatable("gui.geriorandomstuff.hex.unsupportedcontinuation"));
                 }
                 continuation = notDone.component2();
             }

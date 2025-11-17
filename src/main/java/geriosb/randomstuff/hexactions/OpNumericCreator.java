@@ -117,7 +117,7 @@ public final class OpNumericCreator implements ConstMediaAction { //why kotlin w
                                 ExponentNegative = true;
                             }
                         } else {
-                            throw new MishapDisallowedSpell("geriorandomstuff.decimalexponents"); // disallowed action (exponents can't have decimal points due to technical reasons)
+                            throw new MishapUnsupportedAction(Component.translatable("gui.geriorandomstuff.hex.decimalexponents")); // disallowed action (exponents can't have decimal points due to technical reasons)
                         }
                     } else {
                         if (Mantissa.isEmpty()) {

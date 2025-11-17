@@ -15,12 +15,19 @@
 			"text": "gui.geriorandomstuff.geriobook.hex.hyper_read.summary"
 		},
 		{
+			"type": "patchouli:empty"
+		},
+		{
 			"type": "hexcasting:pattern",
 			"op_id": "geriorandomstuff:continuation_decoder",
 			"anchor": "geriorandomstuff:continuation_decoder",
 			"input": "jump",
 			"output": "many",
 			"text": "gui.geriorandomstuff.geriobook.hex.continuation_decoder.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "gui.geriorandomstuff.geriobook.hex.continuation_decoder.1"
 		}
 	]
 }
