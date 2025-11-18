@@ -1,6 +1,7 @@
 package geriosb.randomstuff.common.caps;
 
 import geriosb.randomstuff.common.lib.GPSLocation;
+import geriosb.randomstuff.utils.HexalUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -54,7 +55,10 @@ public class MoteHandler implements IItemHandler {
         if (positiongetter != null) {
             if (!MediafiedItemManager.isStorageLoaded(positiongetter.getUuid())) return stack; // the item will not be consumed on
             if (positiongetter.isFull()) return stack; // the item will not be consumed on
-            if (!simulate) positiongetter.assignItem(new ItemRecord(stack));
+            if (!simulate) {
+                positiongetter.assignItem(new ItemRecord(stack));
+                HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
+            }
             return ItemStack.EMPTY; // no remainder
         }
         return stack; // no conditions met
@@ -70,7 +74,10 @@ public class MoteHandler implements IItemHandler {
                 return roro.toStack((int) roro.getCount());
             } else {
                 ItemRecord roro = ait.split(amount);
-                if (ait.getCount() <= 0) positiongetter.getStoredItems().put(slot, null);
+                if (ait.getCount() <= 0) {
+                    positiongetter.getStoredItems().remove(slot);
+                    HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
+                }
                 return roro.toStack((int) roro.getCount());
             }
         }
