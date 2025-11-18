@@ -1,5 +1,6 @@
 package geriosb.randomstuff.common.blocks.cheaters;
 
+import at.petrak.hexcasting.annotations.SoftImplement;
 import geriosb.randomstuff.common.caps.MegaStorageItemHandler;
 import geriosb.randomstuff.common.caps.MoteHandler;
 import geriosb.randomstuff.common.lib.GPSLocation;
@@ -26,7 +27,7 @@ import javax.annotation.Nullable;
 
 public class ExposedMoteBlockEntity extends net.minecraft.world.level.block.entity.BlockEntity implements IGPSableBlock {
     private GPSLocation targetloc = null;
-	private final MoteHandler handler = new MoteHandler(this.getLevel());
+	private final MoteHandler handler = new MoteHandler();
 	private final LazyOptional<IItemHandler> handlerOptional = LazyOptional.of(() -> handler);
 
 	public ExposedMoteBlockEntity(BlockPos position, BlockState state) {
@@ -37,7 +38,8 @@ public class ExposedMoteBlockEntity extends net.minecraft.world.level.block.enti
 	public void load(CompoundTag tag) {
 		super.load(tag);
         targetloc = loadGPSLocFromNBT(tag);
-        handler.setPosition(targetloc.pos);
+        if (targetloc != null && this.getLevel() != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage watashino)
+            handler.setPosition(watashino);
 	}
 
 	@Override
@@ -70,8 +72,9 @@ public void setRemoved() {
     @Override
     public void SetGPSLocation(GPSLocation loc) {
         targetloc = loc;
-        handlerOptional.invalidate();
-        handler.setPosition(targetloc.pos);
+        //handlerOptional.invalidate();
+        if (targetloc != null && this.getLevel() != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage watashino)
+            handler.setPosition(watashino);
         this.setChanged();
     }
 
