@@ -54,7 +54,7 @@ public class MoteHandler implements IItemHandler {
         if (positiongetter != null) {
             if (!MediafiedItemManager.isStorageLoaded(positiongetter.getUuid())) return stack; // the item will not be consumed on
             if (positiongetter.isFull()) return stack; // the item will not be consumed on
-            positiongetter.assignItem(new ItemRecord(stack));
+            if (!simulate) positiongetter.assignItem(new ItemRecord(stack));
             return ItemStack.EMPTY; // no remainder
         }
         return stack; // no conditions met
@@ -65,9 +65,14 @@ public class MoteHandler implements IItemHandler {
         if (positiongetter != null) {
             ItemRecord ait = positiongetter.getStoredItems().get(slot);
             if (ait == null || ait.getCount() <= 0) return ItemStack.EMPTY;
-            ItemRecord roro = ait.split(amount);
-            if (ait.getCount() <= 0) positiongetter.getStoredItems().put(slot,null);
-            return roro.toStack((int)roro.getCount());
+            if (simulate) {
+                ItemRecord roro = ait.copy(ait.getItem(),ait.getTag(),ait.getCount()).split(amount);
+                return roro.toStack((int) roro.getCount());
+            } else {
+                ItemRecord roro = ait.split(amount);
+                if (ait.getCount() <= 0) positiongetter.getStoredItems().put(slot, null);
+                return roro.toStack((int) roro.getCount());
+            }
         }
         return ItemStack.EMPTY;
     }
