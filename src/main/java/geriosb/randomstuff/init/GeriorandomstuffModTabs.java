@@ -44,11 +44,12 @@ public class GeriorandomstuffModTabs {
 				tabData.accept(GeriorandomstuffModBlocks.SILKER.get().asItem());
 				tabData.accept(GeriorandomstuffModBlocks.LIQUID_DUPLICATOR_BLOCK.get().asItem());
 				tabData.accept(GeriorandomstuffModItems.SUPERHEATED_DUPLICATOR.get());
+                if (ModList.get().isLoaded("hexal")) tabData.accept(GeriorandomstuffModBlocks.EXPOSED_MOTE.get().asItem());
 				//misc
 				tabData.accept(GeriorandomstuffModBlocks.GERIO_BLOCK.get().asItem());
 				tabData.accept(GeriorandomstuffModBlocks.UNBREAKABLE_BLOCK.get().asItem());
 				tabData.accept(GeriorandomstuffModItems.SAMBADEJANEIRO.get());
 				tabData.accept(GeriorandomstuffModItems.PASTE.get());
 				tabData.accept(GeriorandomstuffModBlocks.GUSSUNHEAD.get().asItem());
-			}).withSearchBar().build());
+			}).build());
 }

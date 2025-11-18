@@ -62,14 +62,20 @@ public class GeriorandomstuffModItems {
 	public static final RegistryObject<Item> MEGA_STORAGE = block(GeriorandomstuffModBlocks.MEGA_STORAGE);
 	public static final RegistryObject<Item> GERIO_BLOCK = daegari(GeriorandomstuffModBlocks.GERIO_BLOCK);
     public static final DeferredRegister<Item> HEXREGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, GeriorandomstuffMod.MODID);
-	public static final RegistryObject<Item> SUPER_SLATE = HEXREGISTRY.register(GeriorandomstuffModBlocks.SUPER_SLATE.getId().getPath(), () -> new SuperSlateItem(GeriorandomstuffModBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Item> SUPER_SLATE = HEXREGISTRY.register(GeriorandomstuffModBlocks.SUPER_SLATE.getId().getPath(), () -> new SuperSlateItem(GeriorandomstuffModBlocks.SUPER_SLATE.get(), new Item.Properties().stacksTo(64)));
     public static final RegistryObject<Item> REMOTE_SLATE = hexblock(GeriorandomstuffModBlocks.REMOTE_SLATE);
+    public static final DeferredRegister<Item> HEXALREGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, GeriorandomstuffMod.MODID);
+    public static final RegistryObject<Item> EXPOSED_MOTE = hexalblock(GeriorandomstuffModBlocks.EXPOSED_MOTE);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
 	}
 
     private static RegistryObject<Item> hexblock(RegistryObject<Block> block) {
+        return HEXREGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static RegistryObject<Item> hexalblock(RegistryObject<Block> block) {
         return HEXREGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
     }
 

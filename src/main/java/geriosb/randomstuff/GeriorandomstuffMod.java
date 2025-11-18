@@ -58,6 +58,7 @@ public class GeriorandomstuffMod {
             if (ModList.get().isLoaded("hexal")) {
                 GeriorandomstuffModBlocks.HEXALREGISTRY.register(bus);
                 GeriorandomstuffModBlockEntities.HEXALREGISTRY.register(bus);
+                GeriorandomstuffModItems.HEXALREGISTRY.register(bus);
             }
         }
 		

@@ -1,6 +1,7 @@
 package geriosb.randomstuff.common.blocks.cheaters;
 
 import geriosb.randomstuff.common.caps.MegaStorageItemHandler;
+import geriosb.randomstuff.common.caps.MoteHandler;
 import geriosb.randomstuff.common.lib.GPSLocation;
 import geriosb.randomstuff.common.lib.IGPSableBlock;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
@@ -25,35 +26,29 @@ import javax.annotation.Nullable;
 
 public class ExposedMoteBlockEntity extends net.minecraft.world.level.block.entity.BlockEntity implements IGPSableBlock {
     private GPSLocation targetloc = null;
-	private final MegaStorageItemHandler handler = new MegaStorageItemHandler(1024);
+	private final MoteHandler handler = new MoteHandler(this.getLevel());
 	private final LazyOptional<IItemHandler> handlerOptional = LazyOptional.of(() -> handler);
 
 	public ExposedMoteBlockEntity(BlockPos position, BlockState state) {
-		super(GeriorandomstuffModBlockEntities.MEGA_STORAGE.get(), position, state);
+		super(GeriorandomstuffModBlockEntities.EXPOSED_MOTE.get(), position, state);
 	}
 
 	@Override
 	public void load(CompoundTag tag) {
 		super.load(tag);
-    if (tag.contains("BigStorage", Tag.TAG_LIST))
-        handler.loadFromNBT(tag.getList("BigStorage", Tag.TAG_COMPOUND));
+        targetloc = loadGPSLocFromNBT(tag);
+        handler.setPosition(targetloc.pos);
 	}
 
 	@Override
 	protected void saveAdditional(CompoundTag tag) {
 		super.saveAdditional(tag);
-    	tag.put("BigStorage", handler.saveToNBT());
-	}
-	
-	@Override
-	public ListTag JadeProviderAdditions() {
-		return handler.saveToNBT();
+        saveGPSLocToNBT(tag,targetloc);
 	}
 
 @Override
 public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) { // the true size is much larger than normal, it's AE2 storage interface interaction is unimplemented
-        if (!(targetloc != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage)) return super.getCapability(cap, side);
-    if (cap == ForgeCapabilities.ITEM_HANDLER)
+    if (cap == ForgeCapabilities.ITEM_HANDLER && targetloc != null && this.getLevel() != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage)
         return handlerOptional.cast();
     return super.getCapability(cap, side);
 }
@@ -74,11 +69,14 @@ public void setRemoved() {
 
     @Override
     public void SetGPSLocation(GPSLocation loc) {
+        targetloc = loc;
         handlerOptional.invalidate();
+        handler.setPosition(targetloc.pos);
+        this.setChanged();
     }
 
     @Override
     public GPSLocation GetGPSLocation() {
-        return null;
+        return targetloc;
     }
 }

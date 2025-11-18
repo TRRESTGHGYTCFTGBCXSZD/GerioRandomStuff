@@ -53,11 +53,7 @@ public class ExposedMoteBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		if (ModList.get().isLoaded("ae2")) {
-			return new MegaStorageAE2BlockEntity(pos, state);
-		} else {
-			return new MegaStorageBlockEntity(pos, state);
-		}
+        return new ExposedMoteBlockEntity(pos, state);
 	}
 
 	@Override
