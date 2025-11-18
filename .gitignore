@@ -6,3 +6,4 @@ run
 cmd here.bat
 autobuild.bat
 .idea/
+/.kotlin

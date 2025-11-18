@@ -50,8 +50,10 @@ public class ExposedMoteBlockEntity extends net.minecraft.world.level.block.enti
 
 @Override
 public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) { // the true size is much larger than normal, it's AE2 storage interface interaction is unimplemented
-    if (cap == ForgeCapabilities.ITEM_HANDLER && targetloc != null && this.getLevel() != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage)
+    if (cap == ForgeCapabilities.ITEM_HANDLER && targetloc != null && this.getLevel() != null && this.getLevel().getBlockEntity(targetloc.pos) instanceof BlockEntityMediafiedStorage watashino) {
+        handler.setPosition(watashino);
         return handlerOptional.cast();
+    }
     return super.getCapability(cap, side);
 }
 
