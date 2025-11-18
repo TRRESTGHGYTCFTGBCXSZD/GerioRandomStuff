@@ -57,7 +57,7 @@ public class MoteHandler implements IItemHandler {
             if (positiongetter.isFull()) return stack; // the item will not be consumed on
             if (!simulate) {
                 positiongetter.assignItem(new ItemRecord(stack));
-                HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
+                //HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
             }
             return ItemStack.EMPTY; // no remainder
         }
@@ -76,7 +76,7 @@ public class MoteHandler implements IItemHandler {
                 ItemRecord roro = ait.split(amount);
                 if (ait.getCount() <= 0) {
                     positiongetter.getStoredItems().remove(slot);
-                    HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
+                    //HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
                 }
                 return roro.toStack((int) roro.getCount());
             }
