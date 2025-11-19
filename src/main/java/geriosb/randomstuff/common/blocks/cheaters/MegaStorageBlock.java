@@ -1,6 +1,7 @@
 
 package geriosb.randomstuff.common.blocks.cheaters;
 
+import geriosb.randomstuff.integrations.MegaStorageSafetyLoader;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,9 +20,6 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 import java.util.Collections;
-
-import geriosb.randomstuff.integrations.MegaStorageAE2BlockEntity;
-import net.minecraftforge.fml.ModList;
 
 public class MegaStorageBlock extends Block implements EntityBlock {
 	public MegaStorageBlock() {
@@ -55,11 +53,7 @@ public class MegaStorageBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		if (ModList.get().isLoaded("ae2")) {
-			return new MegaStorageAE2BlockEntity(pos, state);
-		} else {
-			return new MegaStorageBlockEntity(pos, state);
-		}
+		return MegaStorageSafetyLoader.retrieve().retrieve(pos, state);
 	}
 
 	@Override

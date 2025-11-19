@@ -5,6 +5,7 @@
 package geriosb.randomstuff.init;
 
 import geriosb.randomstuff.common.blocks.cheaters.*;
+import geriosb.randomstuff.integrations.MegaStorageSafetyLoader;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,10 +15,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
 import geriosb.randomstuff.common.blocks.recipeblock.YoncrusherBlockEntity;
-import geriosb.randomstuff.integrations.MegaStorageAE2BlockEntity;
 import geriosb.randomstuff.GeriorandomstuffMod;
-
-import net.minecraftforge.fml.ModList;
 
 public class GeriorandomstuffModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, GeriorandomstuffMod.MODID);
@@ -30,9 +28,7 @@ public class GeriorandomstuffModBlockEntities {
     public static final RegistryObject<BlockEntityType<? extends BlockEntity>> MEGA_STORAGE =
             REGISTRY.register("mega_storage",
                     () -> BlockEntityType.Builder.of(
-                            (pos, state) -> ModList.get().isLoaded("ae2")
-                                    ? new MegaStorageAE2BlockEntity(pos, state)
-                                    : new MegaStorageBlockEntity(pos, state),
+                            (pos, state) -> MegaStorageSafetyLoader.retrieve().retrieve(pos, state),
                             GeriorandomstuffModBlocks.MEGA_STORAGE.get()
                     ).build(null));
 

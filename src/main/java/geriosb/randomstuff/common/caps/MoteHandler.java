@@ -1,5 +1,6 @@
 package geriosb.randomstuff.common.caps;
 
+import com.mojang.datafixers.util.Pair;
 import geriosb.randomstuff.common.lib.GPSLocation;
 import geriosb.randomstuff.utils.HexalUtils;
 import net.minecraft.core.BlockPos;
@@ -24,6 +25,8 @@ import ram.talia.hexal.common.lib.HexalBlockEntities;
 
 public class MoteHandler implements IItemHandler {
     private BlockEntityMediafiedStorage positiongetter = null;
+    private int measuredslots = 0;
+    private List<Pair<Integer,ItemStack>> idiom = new ArrayList<Pair<Integer,ItemStack>>(); // even if the object was created, it will always be there to prevent crashes
 
     public MoteHandler() {
     }
@@ -32,19 +35,57 @@ public class MoteHandler implements IItemHandler {
         positiongetter = newpos;
     }
 
+    public void RecalculateDisplayedSlots() {
+        measuredslots = 1;
+        idiom = new ArrayList<Pair<Integer,ItemStack>>();
+        for (Map.Entry<Integer,ItemRecord> entry : positiongetter.getStoredItems().entrySet()) {
+			/*if (entry.count.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) < 0) {
+					ItemStack display = entry.stack.copy();
+					display.setCount(entry.count.intValue());
+					idiom.add(display);
+					measuredslots++;
+			} else {
+				BigInteger[] fullintsplusremain = entry.count.divideAndRemainder(BigInteger.valueOf(Integer.MAX_VALUE));
+				long fullints = fullintsplusremain[0].longValue();
+				int remain = fullintsplusremain[1].intValue();
+				ItemStack display = entry.stack.copy();
+				display.setCount(Integer.MAX_VALUE);
+				for (long i=0; i<fullints; i++) {
+					idiom.add(display); //points to same instance, for memory reduction
+					measuredslots++;
+				}
+				if (remain>0) {
+					display = entry.stack.copy();
+					display.setCount(remain);
+					idiom.add(display);
+					measuredslots++;
+				}
+			}*/
+            // only construct the items with same caps (max 2.1 billion)
+            ItemStack display = entry.getValue().toStack().copy();
+            display.setCount((int)entry.getValue().getCount());
+            idiom.add(new Pair<>(entry.getKey(),display));
+            measuredslots++;
+        }
+    }
+
     // --- Standard IItemHandler methods ---
 
     @Override
     public int getSlots() {
-        return HexalConfig.getServer().getMaxRecordsInMediafiedStorage();
+        if (positiongetter != null) {
+            RecalculateDisplayedSlots();
+            return measuredslots;
+        }
+        return 0;
     }
 
     @Override
 	public ItemStack getStackInSlot(int slot) {
         if (positiongetter != null) {
-            ItemRecord ait = positiongetter.getStoredItems().get(slot);
-            if (ait == null) return ItemStack.EMPTY; // another failsafe
-            return ait.toStack((int)ait.getCount());
+            RecalculateDisplayedSlots();
+            if (slot >= idiom.size()) return ItemStack.EMPTY;
+            return idiom.get(slot).getSecond();
         }
         return ItemStack.EMPTY;
 	}
@@ -67,7 +108,9 @@ public class MoteHandler implements IItemHandler {
     @Override
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
         if (positiongetter != null) {
-            ItemRecord ait = positiongetter.getStoredItems().get(slot);
+            RecalculateDisplayedSlots();
+            if (slot >= idiom.size()) return ItemStack.EMPTY;
+            ItemRecord ait = positiongetter.getStoredItems().get(idiom.get(slot).getFirst());
             if (ait == null || ait.getCount() <= 0) return ItemStack.EMPTY;
             if (simulate) {
                 ItemRecord roro = ait.copy(ait.getItem(),ait.getTag(),ait.getCount()).split(amount);
@@ -75,7 +118,7 @@ public class MoteHandler implements IItemHandler {
             } else {
                 ItemRecord roro = ait.split(amount);
                 if (ait.getCount() <= 0) {
-                    positiongetter.getStoredItems().remove(slot);
+                    positiongetter.removeStoredItem(idiom.get(slot).getFirst());
                     //HexalUtils.FixMoteInvalidity(positiongetter.getStoredItems());
                 }
                 return roro.toStack((int) roro.getCount());
