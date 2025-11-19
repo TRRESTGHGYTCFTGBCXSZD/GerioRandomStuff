@@ -2,12 +2,16 @@ package geriosb.randomstuff;
 
 import geriosb.randomstuff.client.blocks.SuperSlateRenderer;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
+import geriosb.randomstuff.init.GeriorandomstuffModBlocks;
+import geriosb.randomstuff.init.GeriorandomstuffModHexActions;
+import geriosb.randomstuff.init.GeriorandomstuffModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 import static geriosb.randomstuff.GeriorandomstuffMod.MODID;
@@ -28,9 +32,11 @@ public class GeriorandomstuffClient {
     }
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers evt) {
-        BlockEntityRenderers.register(
-                GeriorandomstuffModBlockEntities.SUPER_SLATE.get(),
-                SuperSlateRenderer::new
-        );
+        if (ModList.get().isLoaded("hexcasting")) {
+            BlockEntityRenderers.register(
+                    GeriorandomstuffModBlockEntities.SUPER_SLATE.get(),
+                    SuperSlateRenderer::new
+            );
+        }
     }
 }

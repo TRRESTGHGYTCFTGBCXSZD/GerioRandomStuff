@@ -76,7 +76,7 @@ public class GeriorandomstuffModItems {
     }
 
     private static RegistryObject<Item> hexalblock(RegistryObject<Block> block) {
-        return HEXREGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+        return HEXALREGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
 	private static RegistryObject<Item> geriopipes(RegistryObject<Block> block) {
