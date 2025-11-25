@@ -14,7 +14,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-import geriosb.randomstuff.procedures.PasteFoodEatenProcedure;
+import geriosb.randomstuff.common.procedures.PasteFoodEatenProcedure;
 import geriosb.randomstuff.init.GeriorandomstuffModItems;
 
 public class PasteItem extends Item {

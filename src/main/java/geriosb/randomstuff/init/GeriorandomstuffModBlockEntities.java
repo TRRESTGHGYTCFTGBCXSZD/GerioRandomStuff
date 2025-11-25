@@ -5,7 +5,10 @@
 package geriosb.randomstuff.init;
 
 import geriosb.randomstuff.common.blocks.cheaters.*;
-import geriosb.randomstuff.integrations.MegaStorageSafetyLoader;
+import geriosb.randomstuff.common.blocks.integrations.ExposedMoteBlockEntity;
+import geriosb.randomstuff.common.blocks.integrations.RemoteSlateBlockEntity;
+import geriosb.randomstuff.common.blocks.integrations.SuperSlateBlockEntity;
+import geriosb.randomstuff.common.caps.integrations.MegaStorageSafetyLoader;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;

@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import static at.petrak.hexcasting.api.HexAPI.modLoc;
 
-import geriosb.randomstuff.common.blocks.cheaters.SuperSlateBlockEntity;
+import geriosb.randomstuff.common.blocks.integrations.SuperSlateBlockEntity;
 import net.minecraft.world.item.TooltipFlag;
 import java.util.List;
 

@@ -27,7 +27,7 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.SilkerUpMenu;
+import geriosb.randomstuff.common.world.inventory.SilkerUpMenu;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 public class SilkerBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {

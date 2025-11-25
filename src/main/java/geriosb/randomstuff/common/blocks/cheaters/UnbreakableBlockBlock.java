@@ -17,7 +17,7 @@ import net.minecraft.core.BlockPos;
 import java.util.List;
 import java.util.Collections;
 
-import geriosb.randomstuff.procedures.UnbreakableBlockRecreateProcedure;
+import geriosb.randomstuff.common.procedures.UnbreakableBlockRecreateProcedure;
 
 public class UnbreakableBlockBlock extends Block {
 	public UnbreakableBlockBlock() {

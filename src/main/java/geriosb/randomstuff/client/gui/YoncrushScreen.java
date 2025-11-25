@@ -10,7 +10,7 @@ import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
 
-import geriosb.randomstuff.world.inventory.YoncrushMenu;
+import geriosb.randomstuff.common.world.inventory.YoncrushMenu;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 

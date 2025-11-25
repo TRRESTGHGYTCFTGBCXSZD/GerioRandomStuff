@@ -17,8 +17,8 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import geriosb.randomstuff.fluid.PlasmaFluid;
-import geriosb.randomstuff.fluid.DuplicatorFluid;
+import geriosb.randomstuff.common.fluid.PlasmaFluid;
+import geriosb.randomstuff.common.fluid.DuplicatorFluid;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 public class GeriorandomstuffModFluids {

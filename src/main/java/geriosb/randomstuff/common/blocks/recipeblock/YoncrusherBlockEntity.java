@@ -29,7 +29,7 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.YoncrushMenu;
+import geriosb.randomstuff.common.world.inventory.YoncrushMenu;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 public class YoncrusherBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {

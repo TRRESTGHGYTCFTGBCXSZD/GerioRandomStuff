@@ -11,10 +11,10 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 
 import net.minecraft.world.inventory.MenuType;
 
-import geriosb.randomstuff.world.inventory.YoncrushMenu;
-import geriosb.randomstuff.world.inventory.TelekinesisUpMenu;
-import geriosb.randomstuff.world.inventory.SilkerUpMenu;
-import geriosb.randomstuff.world.inventory.DupeMenu;
+import geriosb.randomstuff.common.world.inventory.YoncrushMenu;
+import geriosb.randomstuff.common.world.inventory.TelekinesisUpMenu;
+import geriosb.randomstuff.common.world.inventory.SilkerUpMenu;
+import geriosb.randomstuff.common.world.inventory.DupeMenu;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 public class GeriorandomstuffModMenus {

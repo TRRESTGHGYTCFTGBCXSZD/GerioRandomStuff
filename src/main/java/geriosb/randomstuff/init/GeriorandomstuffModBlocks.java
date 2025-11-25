@@ -5,6 +5,8 @@
 package geriosb.randomstuff.init;
 
 import geriosb.randomstuff.common.blocks.cheaters.*;
+import geriosb.randomstuff.common.blocks.integrations.ExposedMoteBlock;
+import geriosb.randomstuff.common.blocks.integrations.SuperSlateBlock;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;

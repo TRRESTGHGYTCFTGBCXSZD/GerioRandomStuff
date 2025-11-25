@@ -9,8 +9,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.fluids.FluidType;
 
-import geriosb.randomstuff.fluid.types.PlasmaFluidType;
-import geriosb.randomstuff.fluid.types.DuplicatorFluidType;
+import geriosb.randomstuff.common.fluid.types.PlasmaFluidType;
+import geriosb.randomstuff.common.fluid.types.DuplicatorFluidType;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 public class GeriorandomstuffModFluidTypes {

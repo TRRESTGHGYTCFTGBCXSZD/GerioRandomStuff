@@ -38,7 +38,7 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.TelekinesisUpMenu;
+import geriosb.randomstuff.common.world.inventory.TelekinesisUpMenu;
 
 public class TelekinesisSetterBlock extends Block implements EntityBlock {
 	public TelekinesisSetterBlock() {

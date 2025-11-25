@@ -42,7 +42,7 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.YoncrushMenu;
+import geriosb.randomstuff.common.world.inventory.YoncrushMenu;
 
 public class YoncrusherBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

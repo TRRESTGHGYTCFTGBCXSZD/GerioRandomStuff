@@ -21,7 +21,7 @@ import net.minecraft.core.BlockPos;
 
 import java.util.List;
 
-import geriosb.randomstuff.procedures.ReplaceGussunProcedure;
+import geriosb.randomstuff.common.procedures.ReplaceGussunProcedure;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;

@@ -1,7 +1,17 @@
 
 package geriosb.randomstuff.common.blocks.cheaters;
 
-import geriosb.randomstuff.integrations.MegaStorageSafetyLoader;
+import appeng.menu.implementations.PriorityMenu;
+import geriosb.randomstuff.common.caps.integrations.MegaStorageSafetyLoader;
+import geriosb.randomstuff.common.world.inventory.DupeMenu;
+import io.netty.buffer.Unpooled;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,6 +27,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.network.NetworkHooks;
 
 import java.util.List;
 import java.util.Collections;

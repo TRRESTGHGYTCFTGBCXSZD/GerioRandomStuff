@@ -17,15 +17,17 @@ import java.util.List;
 public class MegaStorageItemHandler implements IItemHandler {
     private final Map<String, ItemEntry> storage = new HashMap<>();
     private int measuredslots = 1;
+    private int maxslots;
     private List<ItemStack> idiom = new ArrayList<ItemStack>(); // even if the object was created, it will always be there to prevent crashes
 
     public MegaStorageItemHandler(int virtualSlots) {
+        maxslots = virtualSlots;
     }
 
     /** Represents an item and its massive count */
     public static class ItemEntry {
-        ItemStack stack;
-        BigInteger count;
+        public ItemStack stack;
+        public BigInteger count;
     }
 
     // --- Standard IItemHandler methods ---
@@ -84,6 +86,10 @@ public class MegaStorageItemHandler implements IItemHandler {
         ItemEntry entry = storage.get(key);
 
         if (entry == null) {
+            if (storage.size() >= maxslots) {
+                RecalculateDisplayedSlots();
+                return stack; //this storage can't be inserted
+            }
             if (!simulate) {
                 entry = new ItemEntry();
                 entry.stack = stack.copy();
@@ -142,7 +148,13 @@ public class MegaStorageItemHandler implements IItemHandler {
 
     @Override
     public boolean isItemValid(int slot, ItemStack stack) {
-        return !stack.isEmpty();
+        if (stack.isEmpty()) return false;
+        String key = makeKey(stack);
+        ItemEntry entry = storage.get(key);
+        if (storage.size() >= maxslots && entry == null) {
+            return false; //this storage can't be inserted
+        }
+        return true;
     }
 
     // --- Utility functions ---
@@ -211,6 +223,10 @@ public class MegaStorageItemHandler implements IItemHandler {
         ItemEntry entry = storage.get(key);
 
         if (entry == null) {
+            if (storage.size() >= maxslots) {
+                RecalculateDisplayedSlots();
+                return size; //this storage can't be inserted
+            }
             if (!simulate) {
                 entry = new ItemEntry();
                 entry.stack = stack.copy();

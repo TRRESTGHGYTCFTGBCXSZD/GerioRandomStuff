@@ -10,7 +10,7 @@ import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
 
-import geriosb.randomstuff.world.inventory.DupeMenu;
+import geriosb.randomstuff.common.world.inventory.DupeMenu;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 

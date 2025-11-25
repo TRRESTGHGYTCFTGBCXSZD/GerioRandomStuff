@@ -22,7 +22,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import geriosb.randomstuff.world.inventory.DupeMenu;
+import geriosb.randomstuff.common.world.inventory.DupeMenu;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 import javax.annotation.Nullable;

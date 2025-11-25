@@ -10,7 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.item.enchantment.Enchantment;
 
-import geriosb.randomstuff.enchantment.WaterFallDamageEnchantment;
+import geriosb.randomstuff.common.enchantment.WaterFallDamageEnchantment;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 public class GeriorandomstuffModEnchantments {

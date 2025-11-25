@@ -38,7 +38,7 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.SilkerUpMenu;
+import geriosb.randomstuff.common.world.inventory.SilkerUpMenu;
 
 public class SilkerBlock extends Block implements EntityBlock {
 	public SilkerBlock() {

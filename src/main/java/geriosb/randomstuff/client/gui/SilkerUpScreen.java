@@ -11,8 +11,8 @@ import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
 
-import geriosb.randomstuff.world.inventory.SilkerUpMenu;
-import geriosb.randomstuff.network.SilkerUpButtonMessage;
+import geriosb.randomstuff.common.world.inventory.SilkerUpMenu;
+import geriosb.randomstuff.common.network.SilkerUpButtonMessage;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;

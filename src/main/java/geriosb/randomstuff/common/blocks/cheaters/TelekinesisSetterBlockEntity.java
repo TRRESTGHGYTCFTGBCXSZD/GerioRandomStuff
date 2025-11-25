@@ -27,7 +27,7 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
-import geriosb.randomstuff.world.inventory.TelekinesisUpMenu;
+import geriosb.randomstuff.common.world.inventory.TelekinesisUpMenu;
 import geriosb.randomstuff.init.GeriorandomstuffModBlockEntities;
 
 public class TelekinesisSetterBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {

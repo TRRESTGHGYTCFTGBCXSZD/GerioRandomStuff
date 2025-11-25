@@ -12,8 +12,8 @@ import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
 
-import geriosb.randomstuff.world.inventory.TelekinesisUpMenu;
-import geriosb.randomstuff.network.TelekinesisUpButtonMessage;
+import geriosb.randomstuff.common.world.inventory.TelekinesisUpMenu;
+import geriosb.randomstuff.common.network.TelekinesisUpButtonMessage;
 import geriosb.randomstuff.GeriorandomstuffMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;

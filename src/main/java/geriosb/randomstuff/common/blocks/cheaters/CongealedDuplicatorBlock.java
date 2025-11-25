@@ -21,15 +21,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import geriosb.randomstuff.world.inventory.DupeMenu;
-import geriosb.randomstuff.procedures.DupeItemProcedure;
+import geriosb.randomstuff.common.world.inventory.DupeMenu;
 
 import java.util.List;
 import java.util.Collections;

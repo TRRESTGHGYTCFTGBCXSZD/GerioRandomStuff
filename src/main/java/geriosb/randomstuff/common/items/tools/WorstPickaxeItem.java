@@ -21,8 +21,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.core.BlockPos;
 
-import geriosb.randomstuff.procedures.WorstPickaxeDestroyCheckProcedure;
-import geriosb.randomstuff.procedures.SuperToolCheckThingyProcedure;
+import geriosb.randomstuff.common.procedures.WorstPickaxeDestroyCheckProcedure;
+import geriosb.randomstuff.common.procedures.SuperToolCheckThingyProcedure;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
